@@ -1,0 +1,545 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --color-primary: #6C9BCF;
+    --color-danger: #FF0060;
+    --color-success: #1B9C85;
+    --color-warning: #F7D060;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant: #677483;
+    --color-background: #e0e0e4;
+    --color-orange: #FD7238;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    ;
+}
+
+.dark-mode-variables {
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow: hidden; /* Prevent scrolling */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    color: var(--color-dark);
+    background-color: var(--color-background);
+    box-sizing: border-box; /* Ensure padding and border are included in width/height */
+}
+
+
+
+.prof-input .nav-tabs {
+    margin-bottom: 10px;
+}
+
+.prof-input .nav-tabs .nav-link {
+    font-size: 14px;
+    color: #666;
+    transition: color 0.3s ease, background-color 0.3s ease; 
+}
+
+
+.prof-input .nav-tabs .nav-link:hover {
+    color: black;
+}
+
+
+.prof-input .nav-tabs .nav-link.active {
+    background-color: var(--color-orange); 
+    color: white;
+    border: 1px solid var(--color-orange); 
+    border-radius: 4px;
+} 
+
+
+
+.prof-input {
+    max-width: 100%;
+    margin: 5%;
+    margin-top: 1%;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.button-group {
+    width: 100%;
+    border-radius: 30px;
+    text-align: center;
+    color: white;
+}
+
+.button-group .btn {
+    width: 100%;
+    border-radius: 30px;
+    text-align: center;
+    color: white;
+}
+
+
+
+
+.btn-change {
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    padding: 10px;
+    border-radius: 30px;
+    margin-top: 50px;
+    cursor: pointer;
+    position: absolute;
+    right: 5.5%;
+}
+
+/* .button-group .btn-add {
+    color: var(--color-orange);
+    background-color: transparent;
+    border: 1px solid var(--color-orange);
+    width: 100%;
+    border-radius: 20px;
+} */
+
+.button-group .btn-add:hover {
+    background-color: var(--color-orange);
+    color: var(--color-white);
+}
+
+.btn-inline-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+
+.btn-inline-group .btn-primary {
+    color: #6C9BCF;
+    background-color: transparent;
+    border: 1px solid #6C9BCF;
+    border-radius: 20px;
+    margin-right: 8px; /* Adjust spacing as needed */
+}
+
+.btn-inline-group .btn-danger {
+    color: #FF0060;  
+    background-color: transparent;
+    border: 1px solid #FF0060; 
+    border-radius: 20px;
+    margin-right: 8px; 
+}
+
+.btn-inline-group .btn-primary:hover {
+    background-color: var(--color-primary); /* Use your preferred primary color */
+    color: var(--color-white); /* Text color on hover */
+    border: none;
+}
+
+.btn-inline-group .btn-danger:hover {
+    background-color: var(--color-danger); /* Use your preferred primary color */
+    color: var(--color-white); /* Text color on hover */
+    border: none;
+}
+
+.btn-inline-group .btn-update-delete {
+    width: 100%;
+    flex-basis: 50%;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .btn-inline-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-update-delete {
+        width: 100%;
+    }
+}
+
+.row .col-lg-4 {
+    margin-top: 15px;
+    background-color: var(--color-white);
+    padding: 20px;
+    max-height: 50%;
+    text-align: center;
+    /* box-shadow: var(--box-shadow); */
+    /* border-radius: var(--card-border-radius); */
+    transition: all 0.3s ease;
+}
+
+.table-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow); 
+    padding: 25px;
+    overflow-y: auto;
+    max-height: 650px;
+    background-color: white;
+    text-align: center;
+    margin: 15px 0;
+    font-size: 13px;
+}
+
+.table-wrapper::-webkit-scrollbar {
+    width: 0;  /* Hides scrollbar */
+    height: 0; /* Hides scrollbar */
+}
+
+.table-wrapper {
+    scrollbar-width: thin; 
+    scrollbar-color: transparent transparent; 
+}
+
+.table-wrapper .table {
+    border-collapse: separate;
+    width: 100%;
+    margin: 0;
+    border-spacing: 0;
+    table-layout: fixed; /* Ensures equal column width */
+}
+
+.table-wrapper .table th, 
+.table-wrapper .table td {
+    width: 25%; /* Equal width for each column */
+    text-align: center;
+    padding: 10px; /* Add some padding for better appearance */
+}
+
+
+.table-wrapper .table thead th {
+    border-bottom: 1px solid var(--color-light);
+    font-weight: bold;
+}
+
+.table-wrapper .table tbody td {
+    border-bottom: 1px solid var(--color-light);
+    text-align: center;
+}
+
+.table tbody tr:hover td {
+    background-color: var(--color-orange); 
+    color: var(--color-white);
+    cursor: pointer; 
+}
+
+.table tbody tr.clicked-row td {
+    background-color: var(--color-orange); 
+    color: var(--color-white);
+}
+
+.text-center .filtering {
+    margin-top: 5px;
+    max-width: 100%;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+.text-center .filtering .form-group {
+    margin: 10px 10px;
+}
+
+.text-center .filtering .btn {
+    background-color: var(--color-orange) !important;
+    color: var(--color-white) !important;
+    border: none !important;
+    border-radius: 10px !important;
+}
+
+
+.text-center .filtering .btn:hover {
+    background-color: transparent !important;
+    color: var(--color-orange) !important;
+    border: 1px solid var(--color-orange) !important;
+}
+
+#successModal  .btn {
+    border: none;
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    border-radius: 5px;
+    margin-top: 10px;
+    z-index: 1000;
+    padding: 10px 20px;
+}
+
+#successModal  .modal-body{
+    background-color: #fff;
+    margin: 20% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 50%;
+    max-width: 400px;
+    border-radius: 30px !important;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#successModal  .modal-body {
+    background-color: var(--color-white);
+    text-align: center;
+}
+
+html, body {
+    overflow: auto; /* Allows scrolling */
+    scrollbar-width: none; /* For Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge */
+}
+
+/* Input fields styling */
+.input-field {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9; 
+    cursor: not-allowed; 
+    margin-bottom: 15px;
+}
+
+.input-field[readonly] {
+    background-color: #e9ecef;
+}
+
+#computer_room_container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+#computer_room {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--color-dark);
+    background-color: #fff;
+    appearance: none;
+    cursor: pointer;
+    top: 4px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+#computer_room:checked {
+    background-color: var(--color-orange);
+    border-color: var(--color-orange);
+}
+
+#computer_room:hover {
+    border-color: var(--color-orange);
+}
+
+#computer_room:checked::before {
+    content: "\2713";
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+#computer_room_container label {
+    font-size: 16px;
+    color: var(--color-dark);
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+
+}
+#computer_room_container label:hover {
+    color: var(--color-orange);
+}
+
+/* Initial hidden state for modal-dialog */
+#profModal .modal-dialog {
+    transform: translateY(20px); 
+    opacity: 0; 
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out; 
+}
+
+/* When the modal is displayed, animate to visible state */
+#profModal.show .modal-dialog {
+    transform: translateY(0); 
+    opacity: 1;
+}
+
+#profModal .modal-dialog {
+    max-width: 550px; 
+}
+
+#profModal .modal-content {
+    border-radius: 30px; /* Rounded corners */
+    overflow: hidden; /* Respect the border radius */
+}
+
+
+/* Center the checkbox and align it with the label */
+#profModal .form-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    margin-left: -15px;
+    margin-top: 5px;
+}
+
+/* Style the checkbox */
+#profModal .custom-checkbox {
+    width: 25px;
+    height: 25px;
+    appearance: none; 
+    border: 2px solid var(--color-dark); 
+    background-color: white; 
+    border-radius: 5px; 
+    cursor: pointer;
+    outline: none; 
+}
+#profModal .modal-title {
+    margin-left: 10px;
+    padding-bottom: 20px;
+}
+
+#profModal .btn-close {
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+#profModal .custom-checkbox:checked {
+    background-color: var(--color-orange); 
+    border: 2px solid var(--color-orange); 
+    position: relative;
+}
+
+/* Add the white checkmark using pseudo-elements */
+#profModal .custom-checkbox:checked::after {
+    font-size: 18px;
+    color: white; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Custom label styling */
+#profModal .custom-label {
+    font-size: 15px;
+    margin-bottom: -7px;
+    color: black; 
+}
+
+.btn-inline-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-bottom: 30px;
+    margin-left: 5px;
+    padding: 0 30px;
+}
+
+.btn-inline-group .btn-primary {
+    color: var(--color-orange);
+    background-color: transparent;
+    border: 1px solid var(--color-orange);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.btn-inline-group .btn-danger {
+    color: var(--color-dark);  
+    background-color: transparent;
+    border: 1px solid var(--color-dark); 
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.btn-inline-group .btn-primary:hover {
+    background-color: var(--color-orange);
+    color: var(--color-white); 
+    border: none;
+}
+
+.btn-inline-group .btn-danger:hover {
+    background-color: var(--color-dark); 
+    color: var(--color-white); 
+    border: none;
+}
+
+#profModal .form-select,
+#profModal .form-control {
+    padding: 10px 10px;
+    border-radius: 20px;
+}
+
+
+.title {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 30px;
+    color: #FD7238;
+}
+
+#professorExistModal .modal-body,
+#updateSuccessModal .modal-body{
+    background-color: #fff;
+    margin: 20% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 50%;
+    max-width: 400px;
+    border-radius: 30px !important;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#professorExistModal  .modal-body,
+#updateSuccessModal .modal-body{
+
+    background-color: var(--color-white);
+    text-align: center;
+}

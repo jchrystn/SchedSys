@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.title {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+    color: #FD7238;
+}
+.container {
+    max-width: 90%;
+}
+
+.table-container {
+    max-height: 300px; 
+    overflow-y: auto;
+
+}
+.table-container::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px; 
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.table {
+    text-align: center;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+#thead th {
+    background-color: transparent; /* Or a slightly different shade for th */
+    color: black; /* To make the text stand out against the background */
+    border-top:1px solid #ddd;
+    border-bottom:2px solid #ddd;
+}
+
+/* #565656; */
+
+/* .table tr {
+    font-size: 15px;
+    cursor: pointer;
+} */
+
+/* .table tbody tr:hover td  {
+    background-color: #FD7238;
+    color: #ffffff;
+} */
+
+.table #schedule_modal {
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.table tbody #schedule_modal:hover td {
+    background-color: #FD7238;
+    color: #ffffff;
+}
+
+
+h5 {
+    font-weight: bold;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.schedule-table-container {
+    margin-top: 20px;
+    max-width: 100%;
+    max-height: 438px; 
+    overflow-y: auto;
+    position: relative;
+}
+
+.schedule-table-container::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.schedule-table-container::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.schedule-table-container::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px; 
+}
+
+.schedule-table-container::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.schedule-table {
+    width: 100%; /* Set the table width to 100% */
+    border-collapse: collapse;
+    background-color: transparent; 
+    position: relative; 
+}
+
+.schedule-table td,
+.schedule-table th {
+    border: 1px solid #ddd;
+    padding: 10px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.schedule-table th {
+    text-align: center;
+    background-color: #eeeeee;
+    color: #333;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.schedule-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.text {
+    margin: 10px;
+    font-weight: bold;
+}
+
+.time-slot {
+    font-weight: bold;
+    background-color: #eeeeee !important; 
+    font-size: 0.85em; 
+    white-space: nowrap; 
+    padding: 0.5rem; 
+}
+
+
+.modal-dialog {
+    max-width: 80%; 
+    margin: 1.5rem auto; 
+}
+
+.modal-content {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.modal-body {
+    padding: 1rem;
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+    padding: 0.75rem;
+}
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0px; 
+}
+
+.search-bar-container .col-md-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.search-bar-container .form-group input {
+    margin: 5px;
+    font-size: 14px;
+}
+#searchbtn{
+    background-color: #FD7238;
+    color: white;
+}
+
+#searchbtn:hover{
+    background-color: transparent;
+    border: solid 1px #FD7238;
+    color: #FD7238;
+}
+
+
+.text-center {
+    font-size: 13px;
+    border-top: none;
+    display: none;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+}
+
+td .delete-btn {
+    color: #ffffff;
+    position: absolute; 
+    right: 35%; 
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+}
+
+.delete-btn:hover {
+    transform: translateY(-50%);
+    border: none;
+    font-size: 20px;
+}
+
+td:hover .delete-btn,
+td:hover .edit-btn {
+    display: block;
+}
+
+td {
+    position: relative; 
+    padding: 10px; 
+}
+
+td .edit-btn {
+    color: #ffffff;
+    position: absolute; 
+    right:40px; 
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+}
+
+td .stop-btn {
+    color: #ffffff;
+    position: absolute; 
+    right:75px; 
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+}
+
+
+.edit-btn:hover {
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    font-size: 20px;
+}
+
+.stop-btn:hover {
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    font-size: 20px;
+}
+
+.fa-light.fa-pencil:hover{
+    color: #ffffff;/* Change this to your desired color */
+}
+
+.fa-light.fa-trash:hover {
+    color: #ffffff;/* Change this to your desired color */
+}
+.equal-width {
+    width: 45%;
+    text-align: center;
+}
+
+/* .checkbox-large {
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+}
+
+.check {
+    align-items: left;
+    text-align: left;
+} */
+
+.button-group {
+    display: flex; 
+    align-items: center; 
+    margin-top: 15px;
+}
+
+.change-btn {
+    background-color: transparent;
+    border: none;
+    color: rgb(0, 0, 0);
+    margin: 0px 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+.del-btn, .pub-btn {
+    padding: 0px 5px;
+    outline: none;
+    font-size: 19px;
+    cursor: pointer;
+    display: none;
+}
+
+.del-btn {
+    background-color: transparent;
+    border: none;
+    color: rgb(0, 0, 0);
+}
+
+
+
+form {
+    flex-grow: 1; 
+}
+
+#create {
+    align-self: center;
+    border-radius: 30px;
+    margin: 10px 20px;
+    transition: background-color 0.3s ease;
+    color:#FD7238;
+    font-weight: bold;
+    font-size: 13px;
+    text-align: center;
+}
+
+#btnNo{
+    background-color:#010101;
+    color:white; 
+}
+
+#btnNo:hover{
+    background-color:transparent;
+    color:#010101;
+    border:solid 1px #010101; /* Red border */
+}
+
+#btnYes{
+    background-color:#FD7238;
+    color:white; 
+}
+
+#btnYes:hover{
+    background-color:transparent;
+    color:#FD7238;
+    border:solid 1px #FD7238; /* Red border */
+}
+
+
+
+ #dropdown-item:hover {
+    background-color: #e9ecef; /* Light grey background on item hover */
+    color: #FD7238; /* Match hover color of toggle link */
+}

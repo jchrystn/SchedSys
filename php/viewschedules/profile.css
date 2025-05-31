@@ -1,0 +1,570 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.row.text-end {
+    position: relative;
+    left: 0px;
+    margin: 20px auto;
+}
+.title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 10px;
+    color: #FD7238;
+    margin: 40px;
+}
+.p-3 {
+    min-height: 50px; /* Adjust as necessary */
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    background-color: #f8f9fa; /* Matches the bg-light class */
+    border-radius: 5px;
+    word-wrap: break-word;
+    font-weight: bold;
+}
+
+/* Custom Styling for Modal */
+.modal-dialog {
+    display: flex;
+    justify-content: center; /* Horizontally centers the modal */
+    align-items: center; /* Vertically centers the modal */
+    min-height: 100vh; 
+    margin: 0; /* Removes the default margin */
+    position: fixed; /* Positions the modal fixed within the viewport */
+    top: 0; /* Ensures the modal starts at the top of the viewport */
+    left: 0; /* Ensures the modal starts from the left of the viewport */
+    width: 100%; /* Ensures the modal takes full width */
+    z-index: 1000; /* Ensure the modal is above other content */
+    padding: 10px 20px;
+}
+
+/* Modal Content */
+#content {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    width: 100%; /* Ensures the modal content takes full width */
+    max-width: 500px; /* Maximum width of the modal */
+    margin: auto; /* Centers the content inside the modal */
+    overflow-y: auto; /* Prevents content from overflowing */
+    max-height: 90vh; /* Limits the height to 90% of the viewport height */
+    border-radius: 10px; /* Rounded corners for the modal */
+}
+
+/* Adjust the modal header background and text color */
+.modal-header {
+    background-color: #ffffff !important; /* Custom orange color */
+    color: white;
+}
+
+/* Style for the modal footer buttons */
+.modal-footer button {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+/* Style for the input field */
+.modal-body .form-control {
+    padding: 12px 15px; /* Increased padding for better spacing */
+    font-size: 16px;
+    border-radius: 10px; /* Rounded corners for input */
+    border: 1px solid #ced4da;
+}
+.modal-body {
+    margin: 20px;
+}
+
+/* Style for the input field label */
+.modal-body .form-label {
+    font-weight: bold;
+}
+
+/* Edit button style */
+.btn.btn-edit {
+    background-color: #FD7238; /* Set background color to orange */
+    color: white; /* Set text color to white for contrast */
+    border: none; /* Remove default border */
+    padding: 7px 13px; /* Add padding for better button size */
+    font-size: 13px; /* Set font size */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor to pointer when hovering */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    margin: 10px auto;
+}
+
+/* Hover effect for the button */
+.btn.btn-edit:hover {
+    background-color: #000000; /* Darker shade of orange on hover */
+    color: #ffffff;
+}
+
+/* Form Label */
+.form-label {
+    text-align: left !important; /* Force left alignment */
+    display: block; /* Ensure label is a block element */
+}
+
+/* Form Select and Input */
+.form-select,
+.form-control {
+    text-align: left; /* Ensure text inside the form elements is left-aligned */
+}
+.btn-update {
+    background-color: #000000;
+    color: white;
+    border: 5px;
+    padding: 8px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.btn-update:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid;
+}
+/* Modal Close Button */
+#btn-update {
+    background-color: #000000; /* Black background */
+    border: none;
+    padding: 6px;
+    font-size: 15px;
+    color: #ffffff;
+    opacity: 1;
+}
+
+#btn-update:hover {
+    opacity: 0.7;
+    color: #ffffff;
+}
+
+/* Success and Error Messages */
+.text-success {
+    margin: 10px;
+    font-size: 20px;
+    text-align: center;
+    color: green; /* Green color for success */
+}
+
+.text-danger {
+    margin: 10px;
+    font-size: 20px;
+    text-align: center;
+    color: red; /* Red color for error */
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .modal-dialog {
+        width: 90%; /* Modal takes 90% of the screen width on small devices */
+    }
+
+    #content {
+        max-width: 100%; /* Ensures content takes up more space on smaller devices */
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
+
+    .modal-header, .modal-footer {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .modal-body .form-control {
+        font-size: 14px; /* Slightly smaller font size for inputs */
+    }
+
+    .modal-footer button {
+        padding: 8px 16px; /* Reduced padding for footer buttons */
+        font-size: 14px; /* Reduced font size for buttons */
+    }
+
+    .btn.btn-edit {
+        padding: 6px 12px; /* Smaller button size for mobile */
+        font-size: 12px; /* Smaller font size for button */
+        margin: 10px;
+    }
+}
+
+.sched-container {
+    padding: 50px;
+    box-sizing: border-box;
+    /* Ensure padding is included in the size */
+    border: 1px solid #ddd;
+    /* Optional border around the container */
+    border-radius: 8px;
+    margin: 20px auto;
+}
+
+/* Schedule Table Container */
+.schedule-table-container {
+    margin-top: 20px;
+    width: 100%; /* Full-width to prevent overflow */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for mobile devices */
+}
+
+/* Schedule Table */
+.schedule-table {
+    width: 100%; /* Table takes full width of the container */
+    border-collapse: collapse; /* Remove space between borders */
+    table-layout: fixed; /* Equal column widths */
+    page-break-inside: auto;
+}
+
+.schedule-table td,
+.schedule-table th {
+    border: 1px solid #ddd; /* Keep borders for table cells */
+    padding: 8px; /* Padding for better readability */
+    text-align: center; /* Center alignment for headers and data */
+    vertical-align: middle; /* Vertical alignment */
+    font-size: 12px; /* Smaller font size for schedule details */
+    word-wrap: break-word; /* Ensure text wraps in narrow cells */
+    -webkit-hyphens: auto; /* Cross-browser hyphenation */
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+/* Header Row Styling */
+.schedule-table th {
+    background-color: #FD7238; /* Highlight color for headers */
+    color: white; /* White text for better contrast */
+    font-weight: bold; /* Bold text for headers */
+}
+
+/* Zebra Stripes for Table Rows */
+.schedule-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra stripes for even rows */
+}
+
+.schedule-table tbody tr:hover {
+    background-color: #fdebd0; /* Highlight row on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+.schedule-table tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+}
+
+.schedule-table tr td, .schedule-table tr th {
+    page-break-inside: avoid;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    .schedule-table th,
+    .schedule-table td {
+        font-size: 10px; /* Smaller font for smaller screens */
+        padding: 4px; /* Less padding for compact display */
+    }
+
+}
+
+/* Responsive Table Container for Extremely Small Screens */
+@media (max-width: 576px) {
+    .schedule-table-container {
+        margin: 10px auto; /* Adjust margin for better layout */
+        overflow-x: scroll; /* Ensure table can scroll horizontally */
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        font-size: 9px; /* Further reduce font size for small screens */
+    }
+}
+.container {
+    padding-left: 15px;  /* Reduces space on the left */
+    padding-right: 15px; /* Reduces space on the right */
+}
+
+.row {
+    margin: 10px auto;
+}
+
+.col-md-6 label {
+    margin: 10px auto;
+    font-size: 12px;
+}
+
+
+
+.text {
+    margin: 10px;
+    font-weight: bold;
+}
+
+.time-slot {
+    font-weight: bold;
+    font-size: 11px; 
+    padding: 3px; 
+}
+
+.modal-dialog {
+    max-width: 80%; 
+    margin: 1.5rem auto; 
+}
+
+#content {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.modal-body {
+    padding: 1rem;
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+    padding: 0.75rem;
+}
+.text-center {
+    font-size: 13px;
+    border-top: none;
+    display: none;
+}
+
+.select-checkbox {
+    margin-right: 10px; 
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+}
+
+
+tr:hover .edit-btn,
+tr:hover .report-btn{
+    display: block; 
+}
+
+td {
+    position: relative; 
+    padding: 10px; 
+}
+
+.custom-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.profile-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid black;
+}
+
+.info-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.info-group {
+    flex: 1 1 calc(50% - 20px); /* Makes them appear side by side */
+    min-width: 250px;
+}
+
+.info-label {
+    margin: 5px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 5px;
+    min-height: 50px; /* Ensures uniform height */
+    justify-content: space-between; /* Keeps content aligned */
+}
+
+
+.info-icon {
+    color: black;
+}
+
+#designationDiv:hover { 
+    cursor: pointer;
+    color: gray; /* Optional: Change text color for better visibility */
+}
+
+
+/* Container for the logo and its adjustments */
+.logo-container {
+    position: relative;
+    text-align: center;
+    padding-top: 0;
+    /* Remove extra padding */
+}
+
+/* Make sure the logo stays properly centered */
+.logo-image {
+    position: absolute;
+    left: 32%;
+    top: 10px;
+    transform: translateX(-50%);
+}
+
+/* Ensure image is responsive for any device size */
+.logo-image img {
+    width: 70px;
+    /* Adjust width for the image */
+    height: 60px;
+    /* Maintain height */
+    max-width: 100%;
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+/* Responsive Design: Adjustments for smaller screens */
+@media (max-width: 767px) {
+
+    /* For smaller screens, adjust the logo size */
+    .logo-image img {
+        width: 50px;
+        /* Reduce size for smaller screens */
+        height: 50px;
+        /* Adjust height for small screens */
+    }
+
+    /* Adjust logo container positioning */
+    .logo-image {
+        left: 10%;
+        /* Keep it centered horizontally */
+        top: 5px;
+        /* Adjust position slightly */
+        transform: translateX(-50%);
+        /* Ensure it's centered */
+    }
+}
+
+/* Print Styling: Adjustments for print (PDF Generation) */
+@media print {
+
+    /* Ensure logo stays centered in print */
+    .logo-container {
+        text-align: center;
+        padding-top: 0;
+        /* Ensure no extra padding */
+    }
+
+    .logo-image {
+        left: 10%;
+        /* Keep the logo centered */
+        top: 10px;
+        /* Adjust top position */
+        transform: translateX(-50%);
+        /* Align it properly */
+    }
+
+    /* Ensure logo is the correct size for print */
+    .logo-image img {
+        width: 70px;
+        /* Keep the logo size for print */
+        height: 60px;
+        max-width: 100%;
+        height: auto;
+        /* Maintain aspect ratio */
+    }
+}
+
+/* General styles for the schedule heading */
+.p {
+    margin-top: 10px;
+    font-size: 10px;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+}
+
+.signature-section {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+   
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+}
+
+.signature-pair {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    
+}
+
+.signature-block {
+    width: 48%;
+    text-align: left;
+    
+}
+
+.signature-name {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.position-name span {
+    font-style: italic;
+}
+
+
+
+/* Small screen adjustments */
+@media (max-width: 767px) {
+    .signature-section>div {
+        width: 100%;
+        /* Stack the sections vertically on smaller screens */
+    }
+
+    h2 {
+        font-size: 14px;
+        /* Increase font size for better readability on small screens */
+    }
+}
+
+/* Paragraph and span styling */
+.signature-section p {
+    line-height: 1.5;
+    margin: 0;
+}
+
+.signature-section span {
+    font-weight: normal;
+}
+
+.signature-section .signature-name {
+    font-weight: bold;
+    text-align: left;
+    margin: 2px auto;
+}
+
+.signature-section .position-name {
+    line-height: 0.8;
+    text-align: left;
+    margin: 2px auto;
+}

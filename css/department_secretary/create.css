@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.title {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 100px;
+    color: #FD7238;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding: 10px;
+}
+
+.data-section {
+    text-align: center;
+    padding: 30px;
+    background-color: #eee;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 1000px;
+    height: auto;
+}
+
+.data-section h2 {
+    text-align: left;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.data-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.data-item {
+    background-color: #F9F9F9;
+    color: #f4560e;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 10px;
+    margin: 0;
+    width: 40%;
+    max-width: 400px;
+    height: auto;
+    transition: transform 0.2s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.data-item i {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.data-item:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .data-section {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .data-items {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .data-item {
+        width: 80%;
+        font-size: 16px;
+        padding: 15px 20px;
+    }
+
+    .data-item i {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .data-section h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .data-item {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .data-item i {
+        font-size: 20px;
+    }
+}
+
+
+#createTableModal .modal-dialog,
+#createContactTableModal .modal-dialog{
+    max-width: 30%;
+}
+
+#btntime {
+    transition: transform 0.2s, color 0.2s, text-shadow 0.2s; /* Smooth transitions for transform, color, and text-shadow */
+    color: #000; /* Initial text color */
+    font-size: 13px;
+}
+
+#btntime:hover {
+    transform: scale(1.0); /* Slightly enlarge the button on hover */
+    color: #f4560e; /* Change text color on hover (example: gold) */
+}
+
+.modal-content {
+    border-radius: 20px;
+}
+
+.modal-header {
+    background-color: #F2F2F2;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.modal-title {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.modal-body {
+    padding: 10px 15px;
+    text-align: center;
+    background-color: #F2F2F2;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#createTableModal .form-control,
+#createContactTableModal .form-control{
+    background-color: #F2F2F2;
+}
+
+#create {
+    align-self: center;
+    width: 50%;
+    border-radius: 30px;
+    background-color: #000000;  /* Add background color to ensure it's visible */
+    margin: 20px 20px;
+    z-index: 1000; /* Ensure it's above other elements */
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+#create:hover{
+	background-color: transparent; /* Red */ /* Red border */
+    color:#ef6d31;
+    display: inline;
+    border: solid 1px #ef6d31 ;
+
+}

@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+/* Basic Navbar styling */
+nav {
+    background-color: #fff;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    padding: 0 20px;
+    position: relative;
+}
+
+.navbar-left, .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-left i, .navbar-right i {
+    cursor: pointer;
+    color: #28a745;
+    font-size: 20px;
+}
+
+.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-center img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.user-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navbar-right a {
+    margin-top: 3px;
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+}
+
+/* Additional spacing adjustments */
+.fa-bars {
+    margin-right: 10px;
+}
+
+.fa-bell, .fa-comment {
+    margin-right: 10px;
+}
+
+/* contentc */
+
+h5 {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+input::placeholder {
+    font-size: 14px;
+    color: #999;
+}
+
+input:focus::placeholder {
+    color: #ccc;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #5e5d5d;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+.filtering {
+    margin-left: auto;
+    align-items: flex-end;
+}
+
+.input-form {
+    font-size: 15px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 260px;
+    height: auto;
+    margin-bottom: 50px;
+    margin-left: -80px;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+.account-table {
+    font-size: 14px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 1000px;
+    height: auto;
+    margin-left: -190px;
+    margin-bottom: 20px;
+    border: none;
+    overflow-x: auto;
+}
+
+.account-table th {
+    text-align: left;
+    vertical-align: middle;
+    padding: 15px 10px;
+    font-weight: bold;
+    background-color: #f9f9f9;
+    border-bottom: 2px solid #ddd;
+    height: 30px;
+    line-height: 30px;
+}
+
+.account-table td {
+    text-align: left;
+    vertical-align: middle;
+    padding: 15px 10px;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.account-row {
+    transition: background-color 0.3s ease;
+}
+
+.account-row:hover {
+    background-color: #ddd;
+}
+
+.account-table th, .account-table td {
+    width: 120px;
+    border-left: none;
+    border-right: none;
+}
+
+
+.account-table td:nth-child(6), 
+.account-table th:nth-child(6), 
+.account-table td:nth-child(7), 
+.account-table th:nth-child(7) {
+    text-align: center; /* Center align 'Slots' and 'Units' */
+}
+
+.account-table tr td:first-child, 
+.account-table tr th:first-child {
+    border-left: none; 
+}
+
+.account-table tr td:last-child, 
+.account-table tr th:last-child {
+    border-right: none;
+}
+
+.button-group {
+    text-align: center;
+}
+
+.button-group .btn {
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    width: 120px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    width: 85px;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    width: 85px;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    gap: 5px; /* Reduced gap between buttons */
+}
+
+.pagination-btn {
+    padding: 5px 10px; /* Smaller padding */
+    cursor: pointer;
+    border: none;
+    border-radius: 5px; /* Smaller border radius */
+    background-color: #e0e0e0;
+    font-weight: bold;
+    font-size: 12px; /* Smaller font size */
+    color: #333;
+}
+.pagination-btn-text {
+    padding: 5px 10px; /* Smaller padding */
+    cursor: pointer;
+    border: none;
+    border-radius: 5px; /* Smaller border radius */
+    background-color: #ffffff;
+    font-weight: bold;
+    font-size: 12px; /* Smaller font size */
+    color: #333;
+}
+
+.pagination-btn.active {
+    background-color: #6a4dff; /* Purple color for the active page */
+    color: #fff; /* White text on the active page */
+}
+
+.pagination-btn:hover {
+    background-color: #ccc;
+}
+
+.pagination-btn-text:disabled {
+    background-color: #ffffff;
+    cursor: not-allowed;
+    color: #aaa;
+}
+
+

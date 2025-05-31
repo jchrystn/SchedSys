@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');       
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+nav {
+    background-color: #fff;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.schedsys {
+    font-size: 30px;
+    color: #28a745;
+    margin-left: 10px;
+}
+
+.navbar-icons {
+    color: #28a745;
+    font-size: 50px;
+}
+
+h2 {
+    color: #333;
+}
+
+.container{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    padding: 20px;
+}
+
+.filtering {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.filtering .form-group {
+    margin-right: 1px;
+    flex: 1;
+}
+
+.filtering .form-group:last-child {
+    margin-right: 0;
+}
+
+.d-flex.align-items-center .mr-3 {
+    margin-right: 15px;
+}
+
+
+form {
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    padding: 50px;
+}
+
+
+form label {
+    display: block;
+    margin: 10px 10px 5px; /* Reduced top margin from 20px to 10px */
+}
+
+form select, form input {
+    width: calc(100% - 20px);
+    padding: 5px;
+    margin: 10px 10px 0; /* Reduced top margin from 20px to 10px */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+}
+
+
+.col-md-4 {
+    background-color: #f9f9f9; /* Light gray background color, you can change it to your preferred color */
+    padding: 10px; /* Optional: Add some padding to improve spacing */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    height:auto;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.time-selection-container {
+    display: flex;
+    align-items: center; /* Align items vertically center */
+    gap: 20px; /* Adjust the gap between the select elements as needed */
+    margin-bottom: 20px; /* Adjust margin if needed */
+}
+
+.time-selection {
+    display: flex;
+    flex-direction: row;
+}
+
+.time-selection label {
+    margin-bottom:10px ; /* Remove margin for labels */
+}
+
+.time-selection select {
+    width: 190px; /* Set a fixed width for consistency */
+}
+
+
+.btn {
+    display: flex;
+    gap: 10px; /* Add space between the buttons */
+    justify-content: flex-start; /* Align buttons to the start (left) */
+    margin-top: 10px; /* Optional: Add some space above the buttons */
+}
+
+.btn input[type="submit"] {
+    padding: 10px; /* Adjust padding for button size */
+    border: 1px solid #ccc; /* Optional: Add border */
+    color: #fff; /* Text color */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s ease; /* Add transition effect */
+    border-radius: 20px;
+    font-weight: bold;
+    
+}
+
+#btnchange{
+    border:none;
+    color:#fff;
+    display: inline;
+    width: 0px;
+    background-color: red;
+}
+
+#btnchange:hover {
+    background-color: #025932; /* Darker blue on hover */
+}
+
+#btndraft{
+    background-color: #3036ec;
+    border-radius: 20px;
+    color:#fff;
+    display: inline;
+
+}
+
+/* Specific styles for each button */
+#plotScheduleBtn {
+    background-color: none; /* Blue */
+    border-color: #007bff; /* Blue border */
+}
+
+#updateScheduleBtn {
+    background-color: #ffc107; /* Yellow */
+    border-color: #ffc107; /* Yellow border */
+    color: #ffffff; /* Black text for contrast */
+}
+
+#deleteScheduleBtn {
+    background-color: #dc3545; /* Red */
+    border-color: #dc3545; /* Red border */
+}
+
+#plotScheduleBtn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#updateScheduleBtn:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+}
+
+#deleteScheduleBtn:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+    /* Style the pop-up */
+    .popup {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 9; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        padding-top: 60px;
+    }
+
+    .popup-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+
+    .table-container {
+        overflow-x: auto;
+        padding: 20px;
+        overflow-y: auto;
+        background-color: #f9f9f9; /* Light gray background color, you can change it to your preferred color */
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .schedule-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: #fff;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+    .schedule-table th, .schedule-table td {
+        border: 1px solid;
+        padding: 8px;
+        text-align: center;
+    }
+    .schedule-table th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+   
+    }
+    .schedule-table tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+        
+
+    }
+    .schedule-table tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .time-slot {
+        font-weight: bold;
+        background-color: #e9f5ec;
+        width: 80px;
+        height:auto;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .shaded-cell {
+        background-color: rgb(244, 211, 247);
+        max-width: 20px;
+        height: 20px;
+    }
+
+
+
+
+
+
+

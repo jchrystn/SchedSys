@@ -1,0 +1,647 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --color-primary: #6C9BCF;
+    --color-danger: #FF0060;
+    --color-success: #1B9C85;
+    --color-warning: #F7D060;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant: #677483;
+    --color-background: #e0e0e4;
+    --color-orange: #FD7238;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    ;
+}
+
+.dark-mode-variables {
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+    background-color: var(--color-background);
+}
+
+.full-width-container {
+    width: 100%;
+    margin: 0;
+    padding: 0 5%;
+}
+
+.filtering {
+    display: flex;
+    flex-wrap: nowrap;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    margin-bottom: 10px; 
+    width: 100%;
+}
+
+.filtering form {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.filtering label {
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.filtering input {
+    text-align: center;
+}
+
+.input-form label {
+    display: block;
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.input-form .time-selection {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    gap: 10px; 
+    flex-wrap: wrap; 
+    margin-bottom: 20px;
+}
+
+.input-form select {
+    flex: 1; 
+    min-width: 100px; 
+    padding: 8px; 
+    border: 1px solid #ccc; 
+}
+
+@media (max-width: 600px) {
+    .input-form .time-selection {
+        flex-direction: column;
+        align-items: stretch; 
+    }
+    
+    .input-form select {
+        width: 100%;
+    }
+}
+
+
+form select, form input {
+    width: 100%;
+    padding: 5px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+}
+
+.filtering {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping for responsiveness */
+    gap: 15px; /* Space between form groups */
+    margin-bottom: 20px; /* Space below filtering section */
+    padding: 30px;  
+}
+
+.filtering .form-group {
+    flex: 1; /* Allow form groups to grow */
+    min-width: 250px; /* Set a minimum width */
+   
+}
+
+.filtering label {
+    display: block; /* Make labels block-level for better layout */
+    margin-bottom: 5px; /* Space between label and input */
+}
+
+.filtering .form-control {
+    border-radius: 20px; /* Rounded corners */
+    width: 100%; /* Full width */
+    padding: 8px; /* Padding for input fields */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .filtering {
+        flex-direction: column; /* Stack elements on small screens */
+    }
+    
+    .filtering .form-group {
+        width: 100%; /* Full width on small screens */
+    }
+}
+
+.col-md-4 {
+    height: 330px;
+    margin-top: 20px;
+    box-sizing: border-box; 
+}
+
+.col-md-4 .time-selection-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px; 
+    width: 100%;
+}
+
+.col-md-4 .time-selection {
+    display: flex;
+    flex-direction: row;
+    gap: 5px; 
+    border-radius: 5px; 
+}
+
+.col-md-4 .time-selection select {
+    width: 162px;
+    border-radius: 5px; 
+}
+
+.modal-dialog {
+    max-width: 400px;
+}
+
+.modal-dialog .modal-content {
+    border-radius: 10px; 
+}
+
+.modal-dialog .modal-header {
+    background-color: #F2F2F2;
+    border-bottom: 1px solid #dee2e6;
+
+}
+
+.modal-dialog .modal-title {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.modal-dialog .modal-body {
+    text-align: center;
+    background-color: #F2F2F2;
+}
+
+.modal-dialog .modal-body p {
+    text-align: center;
+    margin: 10px 30px;
+}
+.modal-dialog .modal-footer {
+    padding: 5px 10px 15px;
+    display: flex;
+    justify-content: center;
+    background-color: #F2F2F2;
+    align-items: center; 
+    border-radius: 20px;
+    width: 100%;
+}
+
+.modal-dialog .modal-btn {
+    display: flex;
+    justify-content: space-between;  /* To align buttons inline */
+    width: 100%; /* Ensure it spans the entire width */
+    gap: 10px;  /* Space between buttons */
+}
+
+.modal-dialog .modal-btn .btn-secondary,
+.modal-dialog .modal-btn .btn-primary,
+.modal-dialog .modal-btn .btn-danger {
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#createTableModal .modal-dialog {
+    max-width: 30%;
+}
+
+#createTableModal .modal-dialog .modal-body {
+    padding: 10px 15px;
+    text-align: center;
+    background-color: #F2F2F2;
+}
+
+#createTableModal .modal-dialog .modal-body span{
+    font-weight: bold;
+}
+
+#createTableModal .modal-dialog .form-control {
+    margin: 15px 5px;
+    background-color: #F2F2F2;
+
+}
+
+#createTableModal .modal-dialog .btn-block {
+    display: block;
+    width: 100%;
+    border-radius: 30px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+#createTableModal .modal-dialog .modal-footer {
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    background-color: #F2F2F2;
+    align-items: center; 
+    border-radius: none;
+    width: 100%;
+}
+
+.btn input[type="submit"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    color: var(--color-white);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 20px;
+}
+
+.btn {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-start;
+    margin-top: 15px; 
+}
+
+#btnchange,
+#complete, 
+#delete {
+    padding: 5px 30px; /* More spacing inside */
+    font-size: 30px;   /* Slightly larger icon/text */
+    border-radius: 12px; /* Rounded corners */
+}
+
+#plotScheduleBtn {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid var(--color-orange);
+    color: var(--color-orange);
+    border-radius: 10px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.btn-inline-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+#updateScheduleBtn {
+    background-color: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+#deleteScheduleBtn {
+    background-color: transparent;
+    border: 1px solid var(--color-danger);
+    border-radius: 30px;
+    color: var(--color-danger);
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+#plotScheduleBtn:hover {
+    background-color:var(--color-orange);
+    border: none;
+    color: var(--color-white);
+}
+
+#updateScheduleBtn:hover {
+    background-color: var(--color-primary);
+    border: none;
+    color: var(--color-white);
+}
+
+#deleteScheduleBtn:hover {
+    background-color: var(--color-danger);
+    border: none;
+    color: var(--color-white);
+}
+
+/* Dropdown menu adjustments */
+.dropdown-menu {
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+    width: 100%; /* Make dropdown the same width as the button */
+    margin-top: 10px; /* Adds spacing from button */
+}
+
+/* Ensure the table is scrollable on small devices */
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Ensure the content is centered within each table cell */
+.centered-cell-content {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+    height: 100%;  
+    vertical-align: middle;          /* Ensure it fills the entire cell */
+}
+
+/* Make sure that table is centered in the middle of the page */
+.container-fluid {
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .centered-cell-content {
+        font-size: 10px;  /* Reduce font size on smaller screens */
+        padding: 5px;     /* Adjust padding on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .centered-cell-content {
+        font-size: 8px;  /* Further reduce font size on very small screens */
+        padding: 3px;    /* Adjust padding */
+    }
+}
+
+
+/* Style the pop-up */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 9;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.modal-dialog .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-dialog .close:hover,
+.modal-dialog .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.schedule-table-container {
+    margin-top: 20px;
+    max-height: 470px; 
+    overflow-y: auto;
+    position: relative;
+}
+
+.schedule-table-container::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.schedule-table-container::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.schedule-table-container::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px; 
+}
+
+.schedule-table-container::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent; 
+}
+
+.schedule-table th, .schedule-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.schedule-table th {
+    background-color: #eeeeee;
+    color: #333;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.schedule-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.text {
+    margin: 10px;
+    font-weight: bold;
+}
+
+.time-slot {
+    font-weight: bold;
+    background-color: #eeeeee;
+    width: 15px;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.shaded-cell {
+    max-width: 20px;
+    background-color: #d6d6d63a; 
+    font-size: 10px;
+}
+
+.shaded-cell:hover {
+    background-color: #f1efef75; 
+}
+
+html, body {
+    overflow: auto; /* Allows scrolling */
+    scrollbar-width: none; /* For Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge */
+}
+
+#create {
+    align-self: center;
+    width: 50%;
+    border-radius: 30px;
+    background-color: #000000;  /* Add background color to ensure it's visible */
+    margin: 20px 20px;
+    z-index: 1000; /* Ensure it's above other elements */
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+#create:hover{
+	background-color: transparent; /* Red */ /* Red border */
+    color:#ef6d31;
+    display: inline;
+    border: solid 1px #ef6d31 ;
+
+}
+
+#dropdown {
+    width: 10%; /* Adjust the width of the entire dropdown */
+}
+
+#dropdown .dropdown-item:hover {
+    background-color: #e9ecef; /* Light grey background on item hover */
+    color: #FD7238; /* Match hover color of toggle link */
+}
+
+#dropdown .dropdown-item:active {
+    background-color: #ced4da; /* Slightly darker background when clicked */
+    color: #FD7238; /* Match clicked color of toggle link */
+}
+
+.title {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+    color: #FD7238;
+}
+
+
+.table-container::-webkit-scrollbar {
+    width: 8px; 
+}
+
+
+#header{
+    font-weight: bold;
+}
+/* Wrapper for buttons */
+
+#btnNo {
+    background-color: #010101;
+    color: white;
+}
+
+#btnNo:hover {
+    background-color: transparent;
+    color: #010101;
+    border: solid 1px #010101; /* Custom border color for #btnNo */
+}
+
+#confirmDraftBtn,
+#confirmCompleteBtn,
+#confirmDeleteBtn {
+    background-color: #FD7238;
+    color: white;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+#confirmDraftBtn:hover,
+#confirmCompleteBtn:hover, 
+#confirmDeleteBtn:hover {
+    background-color: transparent;
+    color: #FD7238;
+    border: solid 1px #FD7238;
+}
+#btnNo, 
+#confirmDraftBtn, 
+#confirmCompleteBtn {
+    float: right; /* Align buttons to the right */
+    margin-left: 5px; /* Optional: add space between buttons */
+}
+
+#btnNo {
+    background-color: #000000;
+    color: white;
+    transition: all 0.3s ease; 
+    padding: 5px 25px;
+}
+
+#successModal  .btn {
+    border: none;
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    border-radius: 5px;
+    margin-top: 10px;
+    z-index: 1000;
+    padding: 10px 20px;
+}
+
+#successModal  .modal-body{
+    background-color: #fff;
+    margin: 20% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 50%;
+    max-width: 400px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#successModal  .modal-body {
+    background-color: var(--color-white);
+    text-align: center;
+}

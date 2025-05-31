@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+body {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../../images/cvsu-bg.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #666;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    background-color: #eee;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.form-column {
+    width: 100%;
+}
+
+.submit-btn {
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin: 10px auto 0;
+    cursor: pointer;
+    display: block;
+}
+
+.submit-btn:hover {
+    background-color: #ffffff;
+    color: #ff6f00;
+    border: 1px solid #ff6f00;
+}
+
+.form-link {
+    color: #666;
+    text-decoration: none;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+}
+
+.form-link:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container .nav-tabs .nav-link {
+    font-size: 14px;
+    color: #666; /* Default color for inactive tabs */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effects */
+}
+
+/* Hover effect */
+.container .nav-tabs .nav-link:hover {
+    color: black;
+}
+
+/* Active tab styling */
+.container .nav-tabs .nav-link.active {
+    background-color: #FD7238; /* Set background to orange for the active tab */
+    color: white; /* Set text color to white for the active tab */
+    border: 1px solid #FD7238;; /* Optional: border matching the background */
+    border-radius: 4px; /* Rounded corners for the active tab */
+}
+
+.title {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+    color: #FD7238;
+}
+
+.table-container {
+    max-height: 300px; 
+    overflow-y: auto;
+}
+
+.table-container::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px; 
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.table {
+    text-align: center;
+}
+
+.icons {
+    display: flex;
+    justify-content: center; /* Centers the buttons horizontally */
+    align-items: center; /* Centers the buttons vertically */
+    gap: 20px;
+}
+
+.icons button {
+    margin: 0 25px; /* Adds horizontal space between buttons */
+    padding: 8px 16px; /* Optional: Control button size */
+}
+
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+/* Optional: Set a different background color for th elements inside the thead */
+#thead th {
+    background-color: transparent; /* Or a slightly different shade for th */
+    color: black; /* To make the text stand out against the background */
+    border-top:1px solid #ddd;
+    border-bottom:2px solid #ddd;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.schedule-table-container {
+    margin-top: 20px;
+    max-height: 438px; 
+    overflow-y: auto;
+    position: relative;
+    
+}
+
+.schedule-table-container::-webkit-scrollbar {
+    width: 0;  /* Hides scrollbar */
+    height: 0; /* Hides scrollbar */
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent; 
+    position: relative;
+}
+
+.schedule-table td,
+.schedule-table th {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.schedule-table th {
+    text-align: center;
+    background-color: #eeeeee !important; 
+    color: #333;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.schedule-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.text {
+    margin: 10px;
+    font-weight: bold;
+}
+
+.time-slot {
+    font-weight: bold;
+    background-color: #eeeeee !important; 
+    font-size: 0.85em; 
+    white-space: nowrap; 
+    padding: 0.5rem; 
+}
+
+#scheduleModal .modal-dialog {
+    max-width: 90% !important; 
+    margin: 1.5rem auto !important; 
+}
+
+.modal-dialog .modal-content {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.modal-dialog .modal-body {
+    padding: 1rem;
+}
+
+.modal-dialog .modal-footer {
+    border-top: 1px solid #dee2e6;
+    padding: 0.75rem;
+}
+
+.table tr {
+    font-size: 15px;
+    cursor: pointer;
+ 
+}
+
+.table tr:hover td {
+    background-color: #FD7238;
+    color: #ffffff;
+
+}
+
+.equal-width {
+    width: 50%;
+    text-align: center;
+}
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: flex-end;
+}
+
+.search-bar-container .form-group {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar-container .form-group input {
+    margin-right: 15px;
+    font-size: 14px;
+    padding: 7px 0;
+}
+.search-bar-container {
+    border-radius: 5px;
+    margin-left: 10px;
+    padding: 7px 0;
+    color: white;
+    border: none;
+}
+
+#searchbtn{
+    background-color: #FD7238;
+    color: white;
+}
+
+#searchbtn:hover{
+    background-color: transparent;
+    border: solid 1px #FD7238;
+    color: #FD7238;
+}
+
+
+td .delete-btn {
+    color: #ffffff;
+    position: absolute; 
+    /* right: 35%;  */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+}
+
+.delete-btn:hover {
+    transform: translateY(-50%);
+    border: none;
+    font-size: 20px;
+}
+
+td:hover .delete-btn,
+td:hover .edit-btn {
+    display: block;
+}
+
+td {
+    position: relative; 
+    padding: 10px; 
+}
+
+td .edit-btn {
+    color: #ffffff;
+    position: absolute; 
+    /* right: 70%;  */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+}
+
+.edit-btn:hover {
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    font-size: 20px;
+}
+
+.fa-light.fa-pencil:hover{
+    color: #ffffff;/* Change this to your desired color */
+}
+
+.fa-light.fa-trash:hover {
+    color: #ffffff;/* Change this to your desired color */
+}
+
+#create {
+    align-self: center;
+    border-radius: 30px;
+    margin: 10px 20px;
+    z-index: 1000; /* Ensure it's above other elements */
+    transition: background-color 0.3s ease;
+    color:#FD7238;
+    font-weight: bold;
+    font-size: 13px;
+}

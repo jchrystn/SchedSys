@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-tabs .nav-link {
+    font-size: 16px;
+    color: #666;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.title {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+    color: #28a745;
+}
+
+#scheduleTable th, #scheduleTable td {
+    vertical-align: middle;
+}
+
+#scheduleTable th {
+    background-color: transparent;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    border: 1px solid black;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+h5 {
+    font-weight: bold;
+    padding: 10px;
+}
+
+.modal-dialog {
+    max-width: 90%;
+    margin: 1.75rem auto;
+    text-align: center;
+}
+
+.modal-content {
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6 !important;
+    padding: 1rem !important;
+}
+
+.schedule-table td {
+    vertical-align: middle;
+}
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    margin: 50px 0px; 
+}
+
+.search-bar-container .col-md-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+
+.search-bar-container .form-group input {
+    margin: 5px;
+    font-size: 14px;
+}
+.search-bar-container .btn {
+    background-color: #28a745;
+    color: white;
+    font-size: 14px;
+}
+
+.text-center {
+    font-size: 15px;
+    border: 1px solid #e7e7e7;
+    border-top: none;
+    margin-top: -15px;
+    padding: 5px 0;
+    display: none;
+}
+
+.select {
+    width: 10%;
+}
+
+.delete-btn {
+    border: none; 
+    color: rgb(255, 255, 255); 
+    font-size: 14px; 
+    background-color: red;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer; 
+    transition: transform 250ms;
+}
+.delete-btn:hover {
+    background-color: rgb(255, 106, 106); 
+}
+
+.edit-btn {
+    border: none; 
+    color: rgb(255, 255, 255); 
+    font-size: 14px; 
+    background-color: blue;
+    padding: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer; 
+    transition: transform 250ms;
+}
+.edit-btn:hover {
+    background-color: rgb(107, 107, 255); 
+}
+.edit-btn:focus {
+    outline: none; 
+}
+
+.view-btn {
+    border: none; 
+    color: rgb(255, 255, 255); 
+    font-size: 14px; 
+    background-color: green;
+    padding: 5px 17px;
+    border-radius: 5px;
+    cursor: pointer; 
+    transition: transform 250ms;
+}
+.view-btn:hover {
+    background-color: rgb(88, 233, 112); 
+}
+
+.action-column {
+    width: 15%; 
+    text-align: center; 
+}
+
+.action-column button {
+    padding: 5px; 
+    font-size: 16px; 
+}
+
+td input {
+    margin-left: 30px;
+}
+
+label {
+    cursor: pointer;
+}
+
+.select {
+    width: 8%;
+}
+
+.select-column {
+    width: 10%; 
+    text-align: center; 
+}
+
+.equal-width {
+    width: 20%;
+    text-align: center; 
+}
+
+.select-column input[type="checkbox"] {
+    width: 10px; 
+    margin-right: 5px;
+    height: 10px; 
+    margin-top: 10px;
+    transform: scale(1.5); 
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5); 
+}
+
+.select {
+    transform: scale(1.8); 
+    -ms-transform: scale(1.8); /* IE 9 */
+    -webkit-transform: scale(1.8); /* Safari */
+    margin: 0; 
+    padding: 0; 
+}
+
+
+.del-btn, .pub-btn {
+    padding: 5px 13px;
+    border-radius: 30px;
+    outline: none;
+    margin-bottom: 22px;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
+}
+
+.del-btn {
+    background-color: red;
+    border: 1px solid red;
+    color: white;
+    margin-right: 5px;
+}
+
+.pub-btn {
+    background-color: green;
+    border: 1px solid green;
+    color: white;
+    margin-right: 10px;
+}
+
+form {
+    flex-grow: 1; 
+}

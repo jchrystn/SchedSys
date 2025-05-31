@@ -1,0 +1,694 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --color-primary: #6C9BCF;
+    --color-danger: #FF0060;
+    --color-success: #1B9C85;
+    --color-warning: #F7D060;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+    --color-orange: #FD7238;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-mode-variables{
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html{
+    font-size: 14px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+    background-color: var(--color-background);
+}
+
+a{
+    color: var(--color-dark);
+}
+
+img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+h2{
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+h3{
+    font-weight: 500;
+    font-size: 0.87rem;
+}
+
+small{
+    font-size: 0.76rem;
+}
+
+p{
+    color: var(--color-dark-variant);
+}
+
+b{
+    color: var(--color-dark);
+}
+
+.text-muted{
+    color: var(--color-info-dark);
+}
+
+.primary{
+    color: var(--color-primary);
+}
+
+.danger{
+    color: var(--color-danger);
+}
+
+.success{
+    color: var(--color-success);
+}
+
+.warning{
+    color: var(--color-warning);
+}
+
+.container{
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    gap: 3rem;
+    grid-template-columns: 12rem auto 23rem;
+}
+
+/* ========= SIDEBAR =========== */
+
+aside{
+    height: 100vh;
+}
+
+aside .toggle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+
+aside .toggle .logo{
+    display: flex;
+    margin-left: 30px;
+}
+
+aside .sidebar{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    height: 88vh;
+    position: relative;
+    top: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a{
+    display: flex;
+    align-items: center;
+    color: var(--color-info-dark);
+    height: 3.7rem;
+    gap: 1rem;
+    font-size: 16px;
+    position: relative;
+    margin-left: 2rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a:last-child{
+    position: absolute;
+    bottom: 0.3rem;
+    width: 100%;
+}
+
+aside .sidebar a.active{
+    width: 100%;
+    color: var(--color-orange);
+    margin-left: 2rem;
+}
+
+aside .sidebar a:hover{
+    color: var(--color-orange);
+}
+
+/* ========= MESSAGE COUNT=========== */
+aside .sidebar .message-count{
+    background-color: var(--color-orange);
+    padding: 2px 6px;
+    color: var(--color-white);
+    font-size: 11px;
+    border-radius: var(--border-radius-1);
+}
+
+/* ========= MAIN CONTAINER =========== */
+
+.main{
+    margin-top: 1.4rem;
+    /* margin-left: 4rem; */
+}
+
+.main .analyse{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+    margin-top: 18px;
+}
+
+/* ========= TOTAL NUMBER =========== */
+
+.box-info {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-gap: 24px;
+    padding-left: 40px;
+    margin-top: 36px;
+}
+
+.box-info li {
+    padding: 24px;
+    background: var(--color-white);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    grid-gap: 24px;
+    min-width: 265px;
+}
+
+.box-info li .fa-solid {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-info li .text h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.box-info li .text p {
+    color: var(--dark);	
+}
+
+
+/* ========= USER ACCOUNT CONTAINER =========== */
+.main .user-accounts{
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.main .user-accounts h2{
+    margin-bottom: 0.8rem;
+}
+
+.main .user-accounts table{
+    background-color: var(--color-white);
+    width: 100%;
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--card-border-radius);
+    transition: all 0.3s ease;
+    font-size: 12px;
+}
+
+.main table tbody td{
+    height: 2.8rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+
+/* ========= RIGHT SECTION =========== */
+
+.right-section{
+    margin-top: 1.4rem;
+    margin-right: 15px;
+}
+
+.right-section .nav{
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+
+.right-section .nav .profile{
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+}
+
+.right-section .nav .profile .profile-photo{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* ========= Academic Year =========== */
+
+/* Styling for the calendar UL */
+.calendar {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-gap: 24px;
+    margin-top: 15px; /* Space above the calendar list */
+}
+
+/* Individual list items */
+.calendar li {
+    padding: 24px;
+    background-color: var(--color-white); /* Background color for the list item */
+    border-radius: 20px; /* Rounded corners */
+    display: flex;
+    align-items: center;
+    gap: 24px; /* Space between icon and text */
+    min-width: 240px; /* Ensures each item has a minimum width */
+}
+
+/* Styling for the calendar icon */
+.calendar li .fa-solid {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px; /* Rounded corners for the icon box */
+    font-size: 36px; /* Icon size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for the text content inside each list item */
+.calendar li .text {
+    display: flex;
+    flex-direction: column; /* Stack label and dropdown vertically */
+}
+
+/* Font styling for the label */
+.calendar li .text label {
+    font-size: 16px; /* Label font size */
+    font-weight: 600;
+    color: var(--dark); /* Text color for the label */
+}
+
+/* Dropdown styling */
+.calendar li select {
+    margin-top: 8px; /* Space between label and dropdown */
+    padding: 8px; /* Padding inside the dropdown */
+    border: 1px solid #ccc; /* Border styling for the dropdown */
+    border-radius: 5px; /* Rounded corners for dropdown */
+    font-size: 16px; /* Font size inside dropdown */
+}
+
+/* Button styling */
+.calendar li button {
+    padding: 5px 8px; /* Padding inside the button */
+    background-color: var(--color-orange); /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Show pointer cursor on hover */
+    font-size: 13px; /* Button font size */
+}
+
+#openModalBtn {
+    margin-top: 16px;
+}
+
+.calendar li button:hover {
+    background-color: #ff8c42; /* Button hover color */
+}
+
+/* ================== Modal Content =================== */
+
+/* Modal background overlay */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    display: flex; /* Enable flex for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+
+/* Modal content */
+.modal-content {
+    /* height: 278px; */
+    background-color: #fefefe;
+    padding: 30px;
+    border-radius: 30px;
+    width: 400px; /* Set width */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    text-align: center; /* Center-align text */
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 33%;
+    right: 38%;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Form elements */
+.modal-content h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.modal-content .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.modal-content .btn-select-year{
+    background-color: white;
+    color: var(--color-success);
+    padding: 10px 15px;
+    border: 1px solid var(--color-success);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 150px;
+}
+
+.modal-content .btn-add-year {
+    background-color: white;
+    color: var(--color-danger);
+    padding: 10px 15px;
+    border: 1px solid var(--color-danger);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 150px;
+}
+
+.modal-content .btn-add-year:hover{
+    background-color: var(--color-danger);
+    color: white;
+    transition: background-color 0.3s;
+}
+.modal-content .btn-select-year:hover {
+    background-color: var(--color-success);
+    color: white;
+    transition: background-color 0.3s;
+}
+
+/* Modal Buttons */
+.modal-buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+.modal-buttons button:last-child {
+    background-color: #ccc;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    flex: 1;
+}
+
+.dash {
+    font-size: 24px;
+    margin: 0 15px;
+}
+
+input[type="date"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button.btn {
+    background-color: white;
+    color: var(--color-danger);
+    padding: 10px 15px;
+    border: 1px solid var(--color-danger);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 150px;
+}
+
+button.btn:hover {
+    background-color: var(--color-danger);
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.response-message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: red;
+}
+
+/* ========= BUTTON FOR CREATING =========== */
+
+.right-section .btn-create{
+    margin-top: 3.5rem;
+    width: 90%;
+}
+
+.right-section .btn-create .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+
+.right-section .btn-create .header span{
+    padding: 10px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--color-white);
+    border-radius: 50%;
+}
+
+.right-section .btn-create .prof{
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+    padding: 1.4rem var(--card-padding);
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.right-section .btn-create .prof:hover{
+    background-color: var(--color-orange); /* Darker shade on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    color: white;
+}
+
+.right-section .btn-create .prof .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+}
+.right-section .btn-create .student{
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+    padding: 1.4rem var(--card-padding);
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.right-section .btn-create .student:hover{
+    background-color: var(--color-orange); /* Darker shade on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    color: white;
+}
+
+.right-section .btn-create .student .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+}
+.right-section .btn-create .department{
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+    padding: 1.4rem var(--card-padding);
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.right-section .btn-create .department:hover{
+    background-color: var(--color-orange); /* Darker shade on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    color: white;
+}
+
+.right-section .btn-create .department .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+}
+.right-section .btn-create .program{
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+    padding: 1.4rem var(--card-padding);
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.right-section .btn-create .program:hover{
+    background-color: var(--color-orange); /* Darker shade on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    color: white;
+}
+
+.right-section .btn-create .program .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+}
+
+.ay_year {
+    width: 150px;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.no-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    text-align: center;
+    color: #666;
+}
+
+.no-data i {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #bbb; /* Adjust color as needed */
+}
+
+.no-data p {
+    font-size: 20px;
+    font-weight: bold;
+}

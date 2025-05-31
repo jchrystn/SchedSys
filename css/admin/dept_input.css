@@ -1,0 +1,76 @@
+
+body {
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 50px;
+    background-color: white;
+    font-family: 'Poppins';
+}
+
+.page-title {
+    padding: 20px;
+}
+
+.dept-input,
+.course-input,
+.program-input,
+.class-input,
+.prof-input,
+.section-input {
+    background-color: #e7e5e5;
+    padding: 20px;
+    height: 550px;
+    margin: 0 auto; 
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.table {
+    text-align: center;
+    background-color: none;
+}
+
+.table tbody {
+    cursor: pointer;
+}
+
+.col-sm-8 {
+    border: none;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-add, 
+.btn-update, 
+.btn-delete {
+    border: none;
+    border-radius: 20px;
+    padding: 5px 30px;
+    margin: 0px 5px;
+    color: white;
+}
+
+.btn-add {
+    background-color: green;
+}
+
+.btn-update {
+    background-color: blue;
+}
+ 
+.btn-delete {
+    background-color: red;
+}
+
+.fa-chevron-down {
+    right: 10px;
+    top: 50%; 
+    transform: translateY(-50%); 
+    pointer-events: none;
+}

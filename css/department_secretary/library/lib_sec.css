@@ -1,0 +1,522 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --color-primary: #6C9BCF;
+    --color-danger: #FF0060;
+    --color-success: #1B9C85;
+    --color-warning: #F7D060;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant: #677483;
+    --color-background: #e0e0e4;
+    --color-orange: #FD7238;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    ;
+}
+
+.dark-mode-variables {
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+    background-color: var(--color-background);
+}
+
+/* Container with flex layout for top controls */
+.table-container {
+    position: relative;
+    margin-bottom: 1rem;
+
+    /* Add flex display and spacing */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* left & right aligned content */
+    gap: 12px; /* spacing between elements */
+    flex-wrap: wrap; /* in case of small width, controls wrap nicely */
+}
+
+
+/* Or if you want it fully invisible but keep width */
+#scheduleTable thead th:first-child {
+  width: 80px; /* fixed width to maintain layout */
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    padding: 10px 12px;
+    white-space: nowrap;
+}
+#scheduleTable thead th:first-child,
+#scheduleTable tbody td:first-child {
+  width: 80px; /* adjust as needed */
+  min-width: 80px;
+}
+
+
+/* Button styling */
+.table-container .btn {
+    background-color: var(--color-orange);
+    border: none;
+    color: var(--color-white);
+    font-size: 14px;
+    padding: 8px 16px;
+}
+.table-container .btn:hover {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-orange);
+    color: var(--color-orange);
+}
+
+/* Align the button to the right */
+#viewSelectedSchedules {
+    float: right;
+    margin-bottom: 1rem;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    display: none; /* initially hidden */
+}
+
+
+/* Style the Select All checkbox */
+#checkAll {
+    transform: scale(1.2);
+    cursor: pointer;
+    margin: 0;
+}
+
+/* Schedule checkbox in each row */
+.schedule-checkbox {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+
+/* Hide Select All container initially */
+#selectAllContainer {
+    display: none;
+}
+
+
+
+
+
+/* General tab link styling */
+.container .nav-tabs .nav-link {
+    font-size: 14px;
+    color: #666; 
+    transition: color 0.3s ease, background-color 0.3s ease; 
+}
+
+/* Hover effect */
+.container .nav-tabs .nav-link:hover {
+    color: black;
+}
+
+/* Active tab styling */
+.container .nav-tabs .nav-link.active {
+    background-color: var(--color-orange); 
+    color: white; 
+    border: 1px solid var(--color-orange); 
+    border-radius: 4px; /* Rounded corners for the active tab */
+}
+/*.content{
+    background-color: none;
+    border: none;
+    margin: 20px 10px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+}*/
+
+.title {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+    color: var(--color-orange);
+}
+
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0px; 
+}
+
+.search-bar-container .col-md-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.search-bar-container .form-group input {
+    margin: 5px;
+    font-size: 14px;
+}
+.search-bar-container .btn {
+    background-color: var(--color-orange);
+    border: none;
+    color: var(--color-white);
+    font-size: 14px;
+    padding: 8px 0;
+}
+
+.search-bar-container .btn:hover {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-orange);
+    color: var(--color-orange);
+    font-size: 14px;
+}
+
+.text-center {
+    font-size: 13px;
+    border-top: none;
+    display: none;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+}
+
+.delete-btn {
+    display: none; 
+    position: absolute; 
+    right: 10px; 
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+}
+
+tr:hover .delete-btn,
+tr:hover .edit-btn,
+tr:hover .share-btn {
+    display: block; 
+    color: var(--color-white);
+}
+
+tr:hover .change-btn{
+    color: var(--color-white);
+}
+
+td {
+    position: relative; 
+    padding: 10px; 
+}
+
+.edit-btn {
+    display: none; 
+    position: absolute; 
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+}
+
+.share-btn {
+    display: none; 
+    position: absolute; 
+    right: 70px;; 
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+}
+
+.equal-width {
+    width: 45%;
+    text-align: center;
+}
+
+/* .checkbox-large {
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+}
+
+.check {
+    align-items: left;
+    text-align: left;
+} */
+
+.button-group {
+    display: flex; 
+    align-items: center; 
+    margin-top: 15px;
+}
+
+.change-btn {
+    background-color: transparent;
+    border: none;
+    color: rgb(0, 0, 0);
+    margin: 0px 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+.del-btn, .pub-btn {
+    padding: 0px 5px;
+    outline: none;
+    font-size: 19px;
+    cursor: pointer;
+    display: none;
+}
+
+.del-btn {
+    background-color: transparent;
+    border: none;
+    color: rgb(0, 0, 0);
+}
+
+.pub-btn {
+    background-color: transparent;
+    border: none;
+    color: rgb(0, 0, 0);
+}
+
+form {
+    flex-grow: 1; 
+}
+
+#shareSchedule .modal-dialog {
+    max-width: 30%;
+}
+
+#shareSchedule .modal-content {
+    border-radius: 10px;
+    border: none;
+}
+
+#shareSchedule .modal-header {
+    background-color: var(--color-white);
+
+}
+
+#shareSchedule .modal-title {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#shareSchedule .modal-body {
+    background-color: var(--color-white);
+    text-align: center;
+    padding: 10%;
+}
+
+#shareForm label {
+    font-weight: bold;
+    color: #333;
+}
+
+#shareForm .modal-footer {
+    background-color: var(--color-white);
+    top: 0;
+}
+
+#shareForm input {
+    background-color: #ffffff;
+}
+
+#shareForm .btn {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    border: none;
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    border-radius: 30px;
+    z-index: 1000;
+}
+
+#shareForm input[type="text"],
+#shareForm input[type="email"],
+#shareForm input[list] {
+    width: 100%;
+    padding: 5px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    font-size: 1rem; 
+}
+
+#shareForm .btn-success {
+    width: 100%;
+    background-color: var(--color-orange);
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#successModal  .btn,
+#privateModal .btn,
+#scheduleSuccessSharedModal .btn,
+#scheduleSharedModal .btn {
+    border: none;
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    border-radius: 5px;
+    margin-top: 10px;
+    z-index: 1000;
+    padding: 10px 20px;
+}
+
+#successModal  .modal-body,
+#privateModal .modal-body,
+#scheduleSuccessSharedModal .modal-body, 
+#scheduleSharedModal .modal-body {
+    background-color: #fff;
+    margin: 20% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 50%;
+    max-width: 400px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#successModal  .modal-body,
+#privateModal .modal-body,
+#scheduleSuccessSharedModal .modal-body,
+#scheduleSharedModal .modal-body {
+    background-color: var(--color-white);
+    text-align: center;
+}
+
+html, body {
+    overflow: auto; /* Allows scrolling */
+    scrollbar-width: none; /* For Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge */
+}
+
+
+#closeBtn{
+    background-color: var(--color-orange);
+    color:white;
+    border-radius: 30px;
+}
+
+/* #closeBtn:hover{
+    background-color: transparent;
+    border: 1px solid var(--color-orange);
+    color:var(--color-orange);
+} */
+ /* Centered modal content */
+.modal-content {
+    border-radius: 20px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
+/* Modal body styling */
+.modal-body {
+    background-color: var(--color-white);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 25px;
+    border-radius: 30px;
+}
+
+/* Button container */
+.delete {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Delete confirmation button */
+.btn-danger {
+    background-color: var(--color-orange);
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-danger:hover {
+    background-color: rgb(255, 195, 85);
+
+}
+
+/* Cancel button */
+.btn-secondary {
+    background-color: #ccc;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-secondary:hover {
+    background-color: #999;
+}

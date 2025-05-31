@@ -1,0 +1,141 @@
+/* General styling for the page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container .nav-tabs .nav-link {
+    font-size: 14px;
+    color: #666; /* Default color for inactive tabs */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effects */
+}
+
+/* Hover effect */
+.container .nav-tabs .nav-link:hover {
+    color: black;
+}
+
+/* Active tab styling */
+.container .nav-tabs .nav-link.active {
+    background-color: #FD7238; /* Set background to orange for the active tab */
+    color: white; /* Set text color to white for the active tab */
+    border: 1px solid #FD7238;; /* Optional: border matching the background */
+    border-radius: 4px; /* Rounded corners for the active tab */
+}
+
+p {
+    margin: 0;
+    line-height: 0.5;
+    text-align: center;
+    font-size: 10px;
+}
+p.university-name, .college-name , .form-title{
+    font-weight: bold;
+}
+
+.signature-section {
+    margin-top: 40px;
+    font-size: 5px;
+    width: 90%;
+}
+
+.signature-section div {
+    width: 45%;
+    float: left;
+    text-align: center;
+}
+
+.signature-section div p {
+    margin: 0;
+}
+
+/* Styling for the tables */
+.schedule-table-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.schedule-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    overflow-x: auto;
+    margin: 0 auto;
+}
+
+.schedule-table th, .schedule-table td {
+    text-align: center;
+    padding: 5px;
+    font-size: 6px;
+    border: 1px solid #000;
+}
+
+.schedule-table th {
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.schedule-table td {
+    font-size: 6px;
+}
+
+/* Styling for the room and schedule details */
+.room-details p {
+    font-size: 6px;
+    line-height: 0.5;
+}
+
+.room-details strong {
+    font-weight: bold;
+}
+
+/* Signature section */
+.signature-section p {
+    line-height: 1.5;
+    margin: 0;
+}
+
+.signature-section p span {
+    display: block;
+}
+
+.signature-section div p span {
+    font-size: 6px;
+}
+
+.signature-section div p {
+    border-bottom: 0.1px solid #000;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.signature-section div p span {
+    margin: 10px 0;
+}
+
+/* For the prepared by, reviewed by, and approved by sections */
+#preparedByOutput, #approvalOutput, #reviewedOutput, #approvedOutput {
+    font-weight: bold;
+}
+
+/* General header text styling */
+h5 {
+    font-size: 8px;
+    font-weight: bold;
+}
+.time-column {
+    width: 150px;
+}
+
+/* Optional: Add media queries for responsiveness */
+@media (max-width: 768px) {
+    .schedule-table-container {
+        width: 100%;
+    }
+
+    .schedule-table th, .schedule-table td {
+        font-size: 4px;
+    }
+}

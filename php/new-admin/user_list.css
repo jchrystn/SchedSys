@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --color-primary: #6C9BCF;
+    --color-danger: #FF0060;
+    --color-success: #1B9C85;
+    --color-warning: #F7D060;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+    --color-orange: #FD7238;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+/* Dark mode variables */
+.dark-mode-variables{
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html{
+    font-size: 14px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+    background-color: var(--color-background);
+}
+
+a{
+    color: var(--color-dark);
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+h2{
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+h3{
+    font-weight: 500;
+    font-size: 0.87rem;
+}
+
+small{
+    font-size: 0.76rem;
+}
+
+p{
+    color: var(--color-dark-variant);
+}
+
+b{
+    color: var(--color-dark);
+}
+
+.text-muted{
+    color: var(--color-info-dark);
+}
+
+.primary{
+    color: var(--color-primary);
+}
+
+.danger{
+    color: var(--color-danger);
+}
+
+.success{
+    color: var(--color-success);
+}
+
+.warning{
+    color: var(--color-warning);
+}
+
+.container {
+    display: flex;
+    width: 96%;
+    height: 100vh;
+    margin: 0 auto;
+    flex-direction: row;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 2rem;
+    padding: 1rem;
+    margin-right: 31.5px;
+    margin-top: 6px;
+}
+
+.nav .profile {
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+}
+
+.nav .profile .profile-photo {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+aside {
+    height: 100%;
+    width: 12.3rem;
+}
+
+aside .toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+
+aside .toggle .logo {
+    display: flex;
+    margin-left: 30px;
+}
+
+aside .sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    height: 88vh;
+    position: relative;
+    top: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a {
+    display: flex;
+    align-items: center;
+    color: var(--color-info-dark);
+    height: 3.7rem;
+    gap: 1rem;
+    font-size: 16px;
+    position: relative;
+    margin-left: 2rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a:last-child {
+    position: absolute;
+    bottom: 0.3rem;
+    width: 100%;
+}
+
+aside .sidebar a.active {
+    width: 100%;
+    color: var(--color-orange);
+    margin-left: 2rem;
+}
+
+aside .sidebar a:hover {
+    color: var(--color-orange);
+}
+
+aside .sidebar .message-count {
+    background-color: var(--color-orange);
+    padding: 2px 6px;
+    color: var(--color-white);
+    font-size: 11px;
+    border-radius: var(--border-radius-1);
+}
+
+.main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: 98vh;
+}
+
+.main .user-accounts {
+    margin-top: 65px;
+    margin-left: 2rem;
+    width: 97%;
+    border-radius: var(--card-border-radius);
+}
+
+.main .user-accounts table {
+    overflow-y: auto;
+    max-height: 400px;
+    background-color: var(--color-white);
+    width: 100%;
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    border-bottom-left-radius: var(--card-border-radius);
+    border-bottom-right-radius: var(--card-border-radius);
+    /* border-collapse: collapse; */
+    transition: all 0.3s ease;
+}
+
+.filtering-container {
+    padding-top: 20px;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-top-left-radius: var(--card-border-radius);
+    border-top-right-radius: var(--card-border-radius);
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Optional: Add space between filtering items */
+}
+
+.filtering {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 7px;
+    padding: 10px;
+    height: 40px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    width: 250px;
+}
+
+.btn-search {
+    background-color: white;
+    color: var(--color-orange);
+    border: 1px solid var(--color-orange);
+    flex: 1;
+    font-weight: 600;
+    text-align: center;
+    margin-left: 20px;
+    justify-content: center;
+    padding: 10px;
+    width: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.main table tbody td {
+    height: 2.8rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+
+.no-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    color: #666;
+}
+
+.no-data i {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #bbb;
+}
+
+.no-data p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 30px;
+    border-radius: 30px;
+    width: 400px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.modal-content .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.modal-content .btn-select-year, .modal-content .btn-add-year {
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 150px;
+    transition: background-color 0.3s;
+}
+
+.modal-content .btn-select-year:hover, .modal-content .btn-add-year:hover {
+    color: white;
+}
+
+.modal-buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .nav {
+        justify-content: space-between;
+        padding: 1rem 2rem;
+    }
+
+    aside {
+        width: 100%;
+        height: auto;
+    }
+
+    .main {
+        margin-top: 1rem;
+    }
+
+    aside .sidebar {
+        position: absolute;
+        left: -12rem;
+        width: 12rem;
+        transition: all 0.3s ease;
+    }
+
+    aside.active .sidebar {
+        left: 0;
+    }
+
+    .main .user-accounts table {
+        max-height: 300px;
+        font-size: 0.8rem;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 0.8rem;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .nav .profile-photo {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .modal-content .btn-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .modal-buttons button {
+        width: 100%;
+    }
+}

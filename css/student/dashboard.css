@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --orange: #FD7238;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+
+.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-center img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+
+/* ===================== Main ===================== */
+.main {
+    position: absolute;
+    left: 0;
+    right: 0;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+
+.topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    margin-left: -100px;
+    cursor: pointer;
+}
+
+.user {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    margin-right: -80px;
+}
+  
+.user img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+
+/* ======================= Cards ====================== */
+.cardBox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    overflow-x: hidden; /* Hide overflow when less than 4 cards */
+    transition: all 0.3s ease;
+}
+
+/* Set up the flexbox layout when there are more than 4 cards */
+.cardBox.scrollable {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    grid-template-columns: none; /* Reset grid columns */
+    gap: 30px; /* Space between cards */
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+.cardBox.scrollable::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.cardBox.scrollable {
+    scrollbar-width: none;
+}
+
+/* Card styling */
+.cardBox .button-card {
+    border: 0px;
+    border-radius: 20px;
+}
+
+/* Active button */
+.cardBox .button-card.active .card {
+    background-color: var(--orange); /* Active card background color */
+    color: white; /* Ensure active card text is white */
+}
+
+.cardBox .button-card .card {
+    width: 300px; 
+    flex: 0 0 auto; /* Prevent cards from shrinking when in flex mode */
+    position: relative;
+    height: 300px;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    scroll-snap-align: start; /* Snap to the start of the card */
+}
+
+.cardBox .button-card .card {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cardBox .button-card .card .numbers {
+    position: relative;
+    text-align: left;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: var(--orange);
+}
+
+.cardBox .button-card .card .cardName {
+    color: var(--black2);
+    text-align: left;
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+.cardBox .button-card .card .iconBx {
+    font-size: 3.5rem;
+    text-align: left;
+    color: var(--black2);
+}
+
+.cardBox .button-card .card:hover {
+    background: var(--orange);
+}
+.cardBox .button-card .card:hover .numbers,
+.cardBox .button-card .card:hover .cardName,
+.cardBox .button-card .card:hover .iconBx {
+    color: var(--white);
+}
+
+
+/* ====================== Content ========================== */
+.text-center {
+    font-weight: bold;
+    text-align: center;
+    color: #FD7238;
+    margin-left: 50px;
+}
+
+.schedule {
+    margin-left: 50px;
+}
+
+h1 {
+    margin-top: 45px;
+    font-size: 32px;
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    color: black;
+    font-weight: bold;
+    margin-top: -20px;
+}
+
+.row {
+    justify-content: center;
+    text-align: center;
+}
+
+.nav-tabs .nav-link {
+    font-size: 16px;
+    color: #666;
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #FD7238;
+    color: #fff;
+}
+
+.nav-tabs .nav-link:hover {
+    border: 1px solid #FD7238;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+td.text-data {
+    text-align: center;
+    font-weight: 430;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.table tbody tr td button.btn-success {
+    width: auto;
+    padding: 8px 12px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    font-weight: 430;
+    font-size: 12px;
+}
+
+.table thead th {
+    border-bottom: 2px solid #d3d3d3;
+    width: 150px;
+    text-align: center;
+}
+
+td {
+    width: 150px;
+    text-align: center;
+}
+
+.btn {
+    background-color: #FD7238;
+}
+

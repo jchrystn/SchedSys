@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --color-primary: #6C9BCF;
+    --color-danger: #FF0060;
+    --color-success: #1B9C85;
+    --color-warning: #F7D060;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+    --color-orange: #FD7238;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-mode-variables{
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html{
+    font-size: 14px;
+}
+
+body {
+    display: flex;           /* Enable flex layout */
+    justify-content: space-between; /* Adjust as needed */
+    align-items: flex-start; /* Align containers at the top */
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+    background-color: var(--color-background);
+}
+
+a{
+    color: var(--color-dark);
+}
+
+img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+small{
+    font-size: 0.76rem;
+}
+
+p{
+    color: var(--color-dark-variant);
+}
+
+b{
+    color: var(--color-dark);
+}
+
+.text-muted{
+    color: var(--color-info-dark);
+}
+
+.primary{
+    color: var(--color-primary);
+}
+
+.danger{
+    color: var(--color-danger);
+}
+
+.success{
+    color: var(--color-success);
+}
+
+.warning{
+    color: var(--color-warning);
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 2rem;
+    padding: 1rem; 
+    margin-right: 31.5px;  
+    margin-top: 6px;
+}
+
+
+.nav .profile {
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+}
+
+.nav .profile .info p {
+    margin: 0;
+}
+
+.nav .profile .profile-photo {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+aside {
+    height: 100%; /* Set to full height of the container */
+    width: 12rem; /* Sidebar width */
+    margin-left: 30px;
+}
+
+aside .toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+
+aside .toggle .logo {
+    display: flex;
+    margin-left: 30px;
+}
+
+aside .toggle .logo .logo-name{
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+aside .sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    height: 88vh;
+    width: 170px;
+    position: relative;
+    top: 1.5rem;
+    margin-top: -7px;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a h3 {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 0.87rem;
+}
+
+aside .sidebar a {
+    display: flex;
+    align-items: center;
+    color: var(--color-info-dark);
+    height: 3.7rem;
+    gap: 1rem;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    margin-left: 2rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a:last-child {
+    position: absolute;
+    bottom: 0.3rem;
+    width: 100%;
+    color: var(--color-info-dark);
+    height: 3.7rem;
+    gap: 1rem;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+aside .sidebar a.active {
+    width: 100%;
+    color: var(--color-orange);
+    margin-left: 2rem;
+}
+
+aside .sidebar a:hover {
+    color: var(--color-orange);
+}
+aside .sidebar a:last-child:hover {
+    color: var(--color-orange);
+}
+
+aside .sidebar .message-count {
+    background-color: var(--color-orange);
+    padding: 1px 7px;
+    color: var(--color-white);
+    font-size: 10px;
+    border-radius: var(--border-radius-1);
+}
+
+/* ========= RIGHT SECTION =========== */
+
+.right-section{
+    margin-top: 1.4rem;
+    margin-right: 15px;
+}
+
+.right-section .nav{
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+
+.right-section .nav .profile{
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+}
+.right-section .nav .profile .info p{
+    font-size: 12px;
+}
+.right-section .nav .profile .info .text-muted {
+    font-size: 0.76rem;
+    position: absolute;              /* Align it to the left (optional, depending on the layout) */
+    right: 80px;            /* Align it to the right (optional, depending on the layout) */
+}
+
+
+.right-section .nav .profile .profile-photo{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* ================== Modal Content =================== */
+
+/* Modal background overlay */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    display: flex; /* Enable flex for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+
+/* Modal content */
+.modal-content1 {
+    background-color: #fefefe;
+    padding: 30px;
+    border-radius: 30px;
+    width: 400px; /* Set width */
+    height: 190.4px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    text-align: center; /* Center-align text */
+}
+
+.modal-content1 h2{
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin: 0px 0px 20px;
+}
+.modal-content1 p{
+    font-size: 12.32px;
+}
+
+/* Modal Buttons */
+.modal-buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+.modal-buttons button:last-child {
+    background-color: #ccc;
+}

@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container .nav-tabs .nav-link {
+    font-size: 14px;
+    color: #666; /* Default color for inactive tabs */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effects */
+}
+
+/* Hover effect */
+.container .nav-tabs .nav-link:hover {
+    color: black;
+}
+
+/* Active tab styling */
+.container .nav-tabs .nav-link.active {
+    background-color: #FD7238; /* Set background to orange for the active tab */
+    color: white; /* Set text color to white for the active tab */
+    border: 1px solid #FD7238; /* Optional: border matching the background */
+    border-radius: 4px; /* Rounded corners for the active tab */
+}
+
+.title {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+    color: #FD7238;
+}
+
+/* Responsive table container */
+.table-container {
+    max-height: 300px; 
+    overflow-y: auto;
+}
+
+/* Table row hover effect */
+.table-container tbody tr:hover td {
+    background-color: #FD7238;
+    color: #eeeeee;
+}
+
+/* Custom scrollbar */
+.table-container::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px; 
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+/* Table alignment */
+.table {
+    text-align: center;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    font-size: 14px;
+}
+
+.table tr {
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* Title styling */
+h5 {
+    font-weight: bold;
+    padding: 0 10px;
+    text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .container .nav-tabs .nav-link {
+        font-size: 12px; /* Reduce tab font size on smaller screens */
+    }
+
+    .title {
+        font-size: 18px; /* Adjust title size */
+        padding-top: 20px;
+    }
+
+    .table th, .table td {
+        font-size: 12px; /* Reduce table font size */
+        padding: 5px; /* Adjust cell padding for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .table-container {
+        max-height: 200px; /* Reduce max height for smaller screens */
+    }
+
+    .container .nav-tabs .nav-link {
+        font-size: 11px; /* Further reduce tab font size */
+    }
+
+    .title {
+        font-size: 16px; /* Smaller title for narrow screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .table {
+        font-size: 11px; /* Adjust table font size */
+    }
+
+    .table th, .table td {
+        font-size: 10px; /* Reduce font size for extra small screens */
+        padding: 3px; /* Minimize padding */
+    }
+
+    .title {
+        font-size: 14px; /* Further adjust title size */
+    }
+}
+
+
+
+
+
+/* Schedule Table Container */
+.schedule-table-container {
+    margin-top: 20px;
+    width: 100%; /* Full-width to prevent overflow */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for mobile devices */
+}
+
+/* Schedule Table */
+.schedule-table {
+    width: 100%; /* Table takes full width of the container */
+    border-collapse: collapse; /* Remove space between borders */
+    table-layout: fixed; /* Equal column widths */
+    page-break-inside: auto;
+}
+
+.schedule-table td,
+.schedule-table th {
+    border: 1px solid #ddd; /* Keep borders for table cells */
+    padding: 8px; /* Padding for better readability */
+    text-align: center; /* Center alignment for headers and data */
+    vertical-align: middle; /* Vertical alignment */
+    font-size: 12px; /* Smaller font size for schedule details */
+    word-wrap: break-word; /* Ensure text wraps in narrow cells */
+    -webkit-hyphens: auto; /* Cross-browser hyphenation */
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+/* Header Row Styling */
+.schedule-table th {
+    background-color: #FD7238; /* Highlight color for headers */
+    color: white; /* White text for better contrast */
+    font-weight: bold; /* Bold text for headers */
+}
+
+/* Zebra Stripes for Table Rows */
+.schedule-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra stripes for even rows */
+}
+
+.schedule-table tbody tr:hover {
+    background-color: #fdebd0; /* Highlight row on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+.schedule-table tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+}
+
+.schedule-table tr td, .schedule-table tr th {
+    page-break-inside: avoid;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    .schedule-table th,
+    .schedule-table td {
+        font-size: 10px; /* Smaller font for smaller screens */
+        padding: 4px; /* Less padding for compact display */
+    }
+
+}
+
+/* Responsive Table Container for Extremely Small Screens */
+@media (max-width: 576px) {
+    .schedule-table-container {
+        margin: 10px auto; /* Adjust margin for better layout */
+        overflow-x: scroll; /* Ensure table can scroll horizontally */
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        font-size: 9px; /* Further reduce font size for small screens */
+    }
+}
+
+
+
+.text {
+    margin: 10px;
+    font-weight: bold;
+}
+
+.time-slot {
+    font-weight: bold;
+    font-size: 8px !important; 
+    white-space: nowrap; 
+    padding: 0px !important; 
+}
+
+.modal-dialog {
+    max-width: 80%; 
+    margin: 1.5rem auto; 
+}
+
+.modal-content {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.modal-body {
+    padding: 1rem;
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+    padding: 0.75rem;
+}
+
+.search-bar-container .btn {
+    background-color: #FD7238;
+    color: white;
+    font-size: 14px;
+}
+.search-bar-container .btn:hover {
+    background-color: #ffe8c5;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+}
+
+.search-bar-container .col-md-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.search-bar-container .form-group input {
+    margin: 5px;
+    font-size: 14px;
+}
+
+
+.text-center {
+    font-size: 13px;
+    border-top: none;
+    display: none;
+}
+
+.select-checkbox {
+    margin-right: 10px; 
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+}
+
+
+tr:hover .edit-btn,
+tr:hover .report-btn{
+    display: block; 
+}
+
+td {
+    position: relative; 
+    padding: 10px; 
+}
+
+.edit-btn {
+    display: none; 
+    position: absolute; 
+    right: 10px; 
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+    color: #f1f1f1;
+
+}
+
+.report-btn {
+    display: none; 
+    position: absolute; 
+    right: 40px; 
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+}
+
+.equal-width {
+    width: 33%;
+    text-align: center;
+}
+
+.button-group {
+    display: flex; 
+    align-items: center; 
+    margin-top: 15px;
+}
+
+form {
+    flex-grow: 1; 
+}
+@media (max-width: 768px) {
+    .modal-dialog {
+        max-width: 100%; /* Make modal more responsive on tablets */
+    }
+
+    .search-bar-container .col-md-3 {
+        flex-direction: column; /* Stack the elements vertically */
+        justify-content: flex-start;
+        margin: 10px;
+    }
+    .time-slot {
+        font-size: 4px !important; /* Adjust font size for time slots */
+        padding: 0px !important;
+    }
+
+    .button-group {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        align-items: flex-start;
+    }
+
+    .p {
+        font-size: 14px; /* Adjust font size for schedule heading */
+    }
+}
+
+
+
+
+/* General styles for the schedule heading */
+.p {
+    margin-top: 20px;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+}
+
+form {
+    flex-grow: 1; 
+}
+@media (max-width: 768px) {
+    .modal-dialog {
+        max-width: 100%; /* Make modal more responsive on tablets */
+    }
+
+    .search-bar-container .col-md-3 {
+        flex-direction: column; /* Stack the elements vertically */
+        justify-content: flex-start;
+        margin: 10px;
+    }
+
+    .time-slot {
+        font-size: 0.75em; /* Adjust font size for time slots */
+        padding: 0.25rem;
+    }
+
+    .button-group {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        align-items: flex-start;
+    }
+
+    .p {
+        font-size: 14px; /* Adjust font size for schedule heading */
+    }
+}
+
+@media print {
+    .page-break {
+        page-break-before: always;
+    }
+}
+
+/* Container for the logo and its adjustments */
+.logo-container {
+    position: relative;
+    text-align: center;
+    padding-top: 0;
+    /* Remove extra padding */
+}
+
+/* Make sure the logo stays properly centered */
+.logo-image {
+    position: absolute;
+    left: 32%;
+    top: 10px;
+    transform: translateX(-50%);
+}
+
+/* Ensure image is responsive for any device size */
+.logo-image img {
+    width: 70px;
+    /* Adjust width for the image */
+    height: 60px;
+    /* Maintain height */
+    max-width: 100%;
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+/* Responsive Design: Adjustments for smaller screens */
+@media (max-width: 767px) {
+
+    /* For smaller screens, adjust the logo size */
+    .logo-image img {
+        width: 50px;
+        /* Reduce size for smaller screens */
+        height: 50px;
+        /* Adjust height for small screens */
+    }
+
+    /* Adjust logo container positioning */
+    .logo-image {
+        left: 10%;
+        /* Keep it centered horizontally */
+        top: 5px;
+        /* Adjust position slightly */
+        transform: translateX(-50%);
+        /* Ensure it's centered */
+    }
+}
+
+/* Print Styling: Adjustments for print (PDF Generation) */
+@media print {
+
+    /* Ensure logo stays centered in print */
+    .logo-container {
+        text-align: center;
+        padding-top: 0;
+        /* Ensure no extra padding */
+    }
+
+    .logo-image {
+        left: 10%;
+        /* Keep the logo centered */
+        top: 10px;
+        /* Adjust top position */
+        transform: translateX(-50%);
+        /* Align it properly */
+    }
+
+    /* Ensure logo is the correct size for print */
+    .logo-image img {
+        width: 70px;
+        /* Keep the logo size for print */
+        height: 60px;
+        max-width: 100%;
+        height: auto;
+        /* Maintain aspect ratio */
+    }
+}
+

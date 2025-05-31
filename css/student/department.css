@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    background-color: var(--white);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    padding: 0 20px;
+}
+
+.navbar-left, .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.navbar-left i, .navbar-right i {
+    cursor: pointer;
+    color: #FD7238;
+    font-size: 20px;
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+}
+
+.fa-bars {
+    margin-right: 10px;
+}
+
+.fa-bell, .fa-comment {
+    margin-right: 10px;
+}
+
+/* content */
+.text-center {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+    color: #FD7238;
+}
+
+#title {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+    color: #FD7238;
+}
+.container {
+    max-width: 1200px;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 32px;
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    color: black;
+    font-weight: bold;
+    margin-top: -20px;
+}
+
+.sem{
+    font-weight: bold;
+    margin-top: -30px;
+}
+.row {
+    justify-content: center;
+    text-align: center;
+}
+
+.nav-tabs .nav-link {
+    font-size: 14px;
+    color: #666;
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #FD7238;
+    color: #fff;
+    border-radius: 4px;
+}
+
+
+.container .nav-tabs .nav-link:hover {
+    color: black;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+td.text-data {
+    text-align: center;
+    font-weight: 430;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.table tbody tr td button.btn-success {
+    width: auto;
+    padding: 8px 12px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    font-weight: 430;
+    font-size: 12px;
+    background-color: #FD7238;
+    border: none;
+}
+
+.table thead th {
+    border-bottom: 2px solid #d3d3d3;
+    width: 150px;
+    text-align: center;
+}
+
+td {
+    width: 150px;
+    text-align: center;
+}
+
+
+.btn {
+    width: 100%;
+}
+
+.time-slot {
+    font-size: 0.7em; 
+}
+
+h5.schedule_text {
+    padding-top: 10px;
+}
+h5.data_text {
+    font-weight: bold;
+}
+
+h5{
+    font-size: 18px;
+}
+
+.schedule-table-container {
+    max-height: 420px; 
+    overflow-y: auto;
+    position: relative;
+}
+
+
+.modal-dialog {
+    max-width: 90%;
+    margin: 1.75rem auto;
+    text-align: center;
+}
+
+.modal-content {
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* .modal-body {
+    padding: 20px;
+} */
+
+.schedule-table-container::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.schedule-table-container::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.schedule-table-container::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px; 
+}
+
+.schedule-table-container::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+} 
+
+.time-slot {
+    font-weight: bold;
+    background-color: #eeeeee !important; 
+    font-size: 0.85em; 
+    white-space: nowrap; 
+    padding: 0.5rem; 
+}
+
+.close {
+    margin-right: 15px;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.table {
+    text-align: center;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    font-size: 14px;
+}
+
+.table tr {
+    font-size: 13px;
+}
+
+.btn-search {
+    padding: 8px 12px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    background-color: #FD7238;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-search:hover {
+    background-color: #c9470f;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.btn-view {
+    background-color: #c9470f;
+    padding: 18;
+}
+

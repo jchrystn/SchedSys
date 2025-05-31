@@ -1,0 +1,958 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Regular.woff2') format('woff2'),
+         url('fonts/Poppins-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Bold.woff2') format('woff2'),
+         url('fonts/Poppins-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Add other font weights and styles as needed */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+.navbar {
+    background-color: #FD7238;
+    height: 70px;
+    font-family: Poppins;
+    cursor: pointer;
+    user-select: none;
+    position: fixed; /* Fixes the navbar at the top */
+    top: 0; /* Aligns it at the very top */
+    width: 100%; /* Ensures the navbar spans the full width */
+    z-index: 1000; /* Keeps it above other content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow to the navbar */
+    position: fixed;
+    /* Fixes the navbar at the top */
+    top: 0;
+    /* Aligns it at the very top */
+    width: 100%;
+    /* Ensures the navbar spans the full width */
+    z-index: 1000;
+    /* Keeps it above other content */
+}
+
+
+body {
+    padding-top: 80px;
+    background-color: white;
+    
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.navbar-brand img{
+    width: 70px;
+
+}
+.profile {
+    cursor: pointer; /* Make it clear this is clickable */
+}
+
+/* Optional: Add some hover effect for profile */
+.profile:hover {
+    opacity: 0.8; /* Slightly fade on hover */
+}
+
+
+
+.sidebar.active {
+    left: 0; 
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.navbar-brand img {
+    width: 70px;
+}
+
+.schedsys {
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    margin-left: 10px;
+    margin-top: 20px;
+
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.navbar-left img {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+}
+
+.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    gap: 15px; /* Reduced gap for better responsiveness */
+    margin-left: auto;
+    margin-right: 20px;
+}
+.navbar-icons a {
+    color: white;
+}
+
+.navbar-icons a:hover {
+    color: rgb(255, 221, 210);
+}
+
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        margin-left: 10px;
+    }
+
+    .schedsys {
+        font-size: 10px !important; /* Ensure it overrides other styles */
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+
+    .navbar-icons {
+        font-size: 18px; /* Reduce icon size for smaller screens */
+        gap: 10px; /* Further reduce spacing */
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 900px) {
+    .navbar-brand {
+        margin-left: 10px;
+    }
+
+    .schedsys {
+        font-size: 15px !important; /* Ensure it overrides other styles */
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+
+    .navbar-icons {
+        font-size: 20px; /* Reduce icon size for smaller screens */
+        gap: 10px; /* Further reduce spacing */
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .navbar-center {
+        display: none; /* Hide center content for smaller devices */
+    }
+
+    .navbar-icons {
+        font-size: 15px; /* Adjust icon size */
+        gap: 8px;
+    }
+
+    .schedsys {
+        font-size: 10px !important; /* Override with high specificity */
+    }
+}
+
+
+/* Sidebar styles */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    background-color: white;
+    height: 100vh;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: -310px; /* Position off-screen initially */
+    transition: 0.5s;
+    overflow: auto;
+}
+
+/* Make sidebar responsive on smaller screens */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 250px; /* Reduced width for smaller screens */
+        left: -250px; /* Hide sidebar off-screen initially */
+    }
+
+
+    /* Show the sidebar when the hamburger menu is clicked */
+    .sidebar.show {
+        left: 0; /* Slide in sidebar */
+    }
+
+    /* Adjust dropdown button styles */
+    .dropdown-btn {
+        font-size: 16px;
+        padding: 8px;
+    }
+}
+
+/* Hamburger Menu */
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: 0.4s;
+}
+
+/* Change hamburger menu to an X shape */
+.hamburger-menu.change .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger-menu.change .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.change .bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* General styles for sidebar links, dropdown buttons, and dropdown items */
+.sidebar a,
+.dropdown-btn,
+.dropdown-item {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+/* Styling for sidebar icons */
+.sidebar .far, 
+.sidebar .fa-id-card, 
+.sidebar .fa-right-from-bracket, 
+.sidebar .fa-user-group, .sidebar .fa-file-spreadsheet{
+    color: black;
+    transition: color 0.3s; /* Smooth transition for icon color changes */
+}
+
+/* Hover effects for links, buttons, and dropdown items */
+.sidebar a:hover,
+.dropdown-btn:hover,
+.dropdown-item:hover {
+    color: #FD7238;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Apply hover styles to icons when parent elements are hovered */
+.sidebar a:hover .far,
+.dropdown-btn:hover .far, .sidebar .fa-file-spreadsheet:hover,
+.dropdown-item:hover .far, .dropdown-item:hover .fa-user-group,
+.dropdown-item:hover .fa-file-spreadsheet, .dropdown-item:hover .fa-id-card {
+    color: #FD7238; /* Ensures icons within hoverable elements also change color */
+}
+.fa-bell:before {
+    color: white;
+}
+/* Dropdown styles */
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+    gap: 10px; /* Adds space between icon and text */
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    background: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    text-align: left;
+}
+
+.dropdown-btn .i {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+}
+
+#form {
+    padding: 30px;
+}
+
+#form-btn {
+    background-color: #FD7238;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+}
+
+#form-btn.disabled {
+    background-color: gray;
+    color: white;
+    cursor: not-allowed;
+}
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    background-color: white;
+    color: black;
+    margin-left: 10px;
+}
+
+.dropdown-content a {
+    padding: 5px;
+    display: block;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 40px;
+}
+
+.dropdown-content a:hover {
+    color: #FD7238;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Show dropdown content when active */
+.dropdown-content.show {
+    display: block;
+}
+
+.content {
+    margin-left: 0;
+    padding: 20px;
+}
+
+/* Hover styles */
+.dropdown-custom a:hover,
+.dropdown-btn:hover {
+    color: #FD7238;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: transparent;
+}
+
+.red-dot {
+    position: absolute;
+    top: 5px;
+    right: -9px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: red;
+    display: block;
+}
+
+.dropdown-menu {
+    top: 60px;
+    max-height: 400px;
+    overflow-y: auto;
+    width: 400px;
+    background-color: white;
+    font-size: 15px;
+    border: inherit;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+/* New Notification Styles */
+.new-notification {
+    font-weight: bold;
+    color: #333;
+    background-color: #fdf2f2; /* Light red background */
+    border-left: 4px solid #ff4d4d; /* Red left border */
+}
+
+.new-notification:hover {
+    background-color: #f9d0d0; /* Slightly darker red on hover */
+}
+
+.new-notification small {
+    color: #ff4d4d; /* Red date color for new notifications */
+}
+
+/* Old Notification Styles */
+.old-notification {
+    font-weight: normal;
+    color: #777;
+    background-color: #e9ecef; /* Light grey background */
+}
+
+.old-notification:hover {
+    background-color: #f1f3f5; /* Slightly lighter grey on hover */
+}
+
+.old-notification small {
+    color: #6c757d; /* Grey date color for old notifications */
+}
+
+/* Notification Item */
+.notification-item {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    height: 80px; /* Set fixed height */
+    overflow: hidden; /* Prevent overflow of content */
+    position: relative;
+}
+
+/* Paragraph inside the notification item */
+.notification-item p {
+    margin: 0;
+    height: 60px; /* Set a fixed height for paragraph content */
+    overflow: hidden; /* Hide overflowed text */
+    text-overflow: ellipsis; /* Add ellipsis for truncated text */
+    line-height: 1.4em; /* Control line spacing */
+}
+
+.notification-item small {
+    font-size: 12px;
+    color: #888;
+    position: absolute; /* Position it absolutely inside the notification item */
+    right: 5px; /* Move it to the right */
+    bottom: 5px; /* Give space from the bottom of the notification item */
+}
+
+
+.notification-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Notification categories */
+.notification-category {
+    font-weight: bold;
+    padding: 10px;
+    background-color: #f1f1f1;
+    margin: 0;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.message-count {
+    position: absolute;
+    border-radius: 20%;
+    padding: 3px 6px;
+    margin: 0 auto;
+    right: 21px;
+    font-size: 0.9rem;
+    background-color: #FD7238;
+    color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Form padding */
+    #form {
+        padding: 20px;
+    }
+
+    /* Button styles */
+    #form-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;  /* Smaller font size */
+    }
+
+    /* Dropdown menu */
+    .dropdown-menu {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    /* Content area */
+    .content {
+        padding: 15px;
+    }
+
+    /* Notification menu */
+    .dropdown-menu {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .notification-item {
+        padding: 15px;
+    }
+
+    /* Notification dot */
+    .red-dot {
+        top: 0;
+        right: -5px;
+    }
+
+    /* Dropdown items */
+    .dropdown-content a {
+        font-size: 14px; /* Smaller font size */
+        margin-right: 10px;
+    }
+
+    /* General text */
+    body, .dropdown-menu, .notification-item {
+        font-size: 12px;  /* General text size reduction */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for mobile screens */
+    #form {
+        padding: 15px;
+    }
+
+    #form-btn {
+        font-size: 12px;  /* Even smaller font size for buttons */
+    }
+
+    .dropdown-menu {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .notification-item {
+        padding: 10px;
+    }
+
+    .message-count {
+        font-size: 0.8rem;  /* Smaller font size for the message count */
+    }
+
+    .dropdown-content a {
+        font-size: 12px;  /* Even smaller font size for dropdown items */
+    }
+
+    /* General text */
+    body, .dropdown-menu, .notification-item {
+        font-size: 11px;  /* Further general text size reduction */
+    }
+}
+
+
+/* Profile Picture Styles */
+.profile-container {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-image {
+    width: 113px;
+    height: 113px;
+    border-radius: 100%;
+    border: 4px solid black;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-dept {
+    font-size: 20px;
+    font-weight: bold;
+    margin: auto;
+    color: black;
+}
+
+.profile-name {
+    font-weight: 500;
+    font-size: 20px;
+    color: black;
+    margin: 10px;
+}
+
+.profile-role {
+    font-size: .9rem;
+    color: black;
+}
+
+.logout-container {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+a.logout-button {
+    padding: 5px 5px;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a.logout-button:hover, 
+.sidebar .fa-right-from-bracket:hover {
+    background-color: transparent;
+    color: #FD7238;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Ensure hover on the button also triggers the icon's hover effect */
+a.logout-button:hover .fa-right-from-bracket,
+.sidebar .fa-right-from-bracket:hover {
+    color: #FD7238;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Profile Image Size */
+    .profile-image {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Profile Name and Department Size */
+    .profile-name, .profile-dept {
+        font-size: 18px;
+    }
+
+    /* Profile Role Font Size */
+    .profile-role {
+        font-size: 0.8rem;
+    }
+
+    /* Adjust Logout Button Font Size */
+    a.logout-button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for mobile screens */
+    .profile-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile-name, .profile-dept {
+        font-size: 16px;
+    }
+
+    .profile-role {
+        font-size: 0.75rem;
+    }
+
+    a.logout-button {
+        font-size: 12px;
+    }
+
+    /* Adjust margin and padding for smaller screens */
+    .profile-container {
+        margin-bottom: 10px;
+    }
+
+    .logout-container {
+        margin-bottom: 10px;
+    }
+}
+
+
+/* lmodal overlay */
+.lmodal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+/* lmodal content box */
+.lmodal-content {
+    background-color: white;
+    margin: 20% auto; /* Centered */
+    padding: 50px;
+    width: 300px; /* Width of the lmodal */
+    height: 200px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+/* Button styles */
+.lmodal-content button {
+    padding: 10px 20px;
+    margin: 8px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.lmodal-content p {
+    font-size: 15px;
+}
+
+/* Confirm button (Yes, Logout) */
+.lmodal-content button:nth-child(2) {
+    background-color: #FD7238; /* Red for logout */
+    color: #fff;
+}   
+
+.lmodal-content button:nth-child(2):hover {
+    background-color: #f34d16; /* Darker red on hover */
+}
+
+/* Cancel button */
+.lmodal-content button:nth-child(3) {
+    background-color: #848282; 
+    color: #fff;
+}
+
+.lmodal-content button:nth-child(3):hover {
+    background-color: #a9a7a7;
+}
+
+
+
+#profUnitModal .modal-dialog {
+    border-radius: 30px;
+    display: flex;
+    align-items: center;  /* Vertically centers the content */
+    justify-content: center;  /* Horizontally centers the content */
+    
+  }
+  #profUnitModal .modal-dialog {
+    border-radius: 30px;
+    display: flex;
+    align-items: center;  /* Vertically centers the content */
+    justify-content: center;  /* Horizontally centers the content */
+    margin: 0;  /* Remove any default margins */
+    position: fixed;
+    top: 50%;  /* Position modal vertically at 50% */
+    left: 50%;  /* Position modal horizontally at 50% */
+    transform: translate(-50%, -50%);  /* Adjust to center exactly */
+  }
+  
+  #profUnitModal .modal-content {
+    border-radius: 30px;
+    height: 50%; 
+    display: flex;
+    background-color: #F2F2F2;
+    align-items: center;  /* Vertically centers the content inside the modal */
+    justify-content: center;  /* Horizontally centers the content inside the modal */
+    justify-items: center;
+    text-align: center;
+  }
+  
+  #profUnitModal .modal-body {
+    padding: 30px !important;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;  /* Vertically centers content in body */
+    justify-content: center;  /* Horizontally centers content in body */
+  }
+  
+  #profUnitModal .modal-body .col-md-3 {
+    display: flex;
+    justify-content: center;
+  }
+  
+  #profUnitModal .card {
+    border-radius: 30px;
+    width: 500px !important;  
+    height: 200px !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-direction: column;
+    border: none;
+  }
+  
+  #profUnitModal .card-title {
+  margin-top: 40px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #333 !important;
+  }
+  
+  #profUnitModal .card-text {
+    color: #666 !important;
+  }
+  
+  #profUnitModal .icon-container i {
+  margin-top: 20px;
+    font-size: 3rem;
+    color: var(--dark)
+  }
+  
+  #profUnitModal .icon-container {
+    background-color: transparent;
+    border-radius: 30%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    
+  }
+  
+  #profUnitModal .card:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  #profUnitModal .btn-close {
+    background-color: transparent;
+    border: none;
+  }
+  
+  #profUnitModal .btn-close-white {
+    color: #fff;
+  }
+
+
+/* lmodal overlay */
+.lmodal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+/* lmodal content box */
+.lmodal-content {
+    background-color: white;
+    padding: 30px;
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Set a maximum width */
+    max-height: 250px; /* Set a maximum height */
+    height: auto; /* Allow auto height for content */
+    border-radius: 20px;
+    text-align: center;
+    overflow-y: auto; /* Add scroll if content overflows */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add depth with shadow */
+}
+
+/* Button styles */
+.lmodal-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.lmodal-content p {
+    font-size: 1rem; /* Responsive font size */
+}
+
+/* Logout Button Styles */
+#logout {
+    background-color: #1d0c04;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem; /* Responsive font size */
+    cursor: pointer;
+    margin: 10px;
+}
+
+#logout:hover {
+    background-color: red; /* Change to red on hover */
+}
+
+/* Close Button Styles */
+#close {
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem; /* Responsive font size */
+    cursor: pointer;
+    margin: 10px;
+}
+
+#close:hover {
+    background-color: #a9a7a7; /* Change to red on hover */
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 600px) {
+    .lmodal-content {
+        width: 95%; /* Reduce width for smaller screens */
+    }
+
+    #logout, #close {
+        font-size: 0.9rem; /* Adjust button font size */
+        padding: 8px 16px; /* Adjust button padding */
+    }
+
+    /* Ensure hover works on smaller screens */
+    #logout:hover, #close:hover {
+        background-color: red; /* Maintain hover effect on small screens */
+    }
+}
+
+#unit_count{
+    color: black !important;
+
+}

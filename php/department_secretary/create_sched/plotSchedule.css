@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Content area styles */
+.content {
+    margin-left: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Media queries */
+@media screen and (max-height: 450px) {
+    .sidebar a {
+        font-size: 18px;
+    }
+}
+
+.container{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    padding: 20px;
+}
+
+.filtering {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping for responsiveness */
+  
+    margin-top:-30px;
+    margin-bottom: 20px; /* Space below filtering section */
+    padding: 20px;  
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+
+}
+
+.filtering .form-group {
+    flex: 1; /* Allow form groups to grow */
+    min-width: 250px; /* Set a minimum width */
+}
+
+.filtering label {
+    display: block; /* Make labels block-level for better layout */
+    margin-bottom: 5px; /* Space between label and input */
+}
+
+.filtering .form-control {
+    border-radius: 20px; /* Rounded corners */
+    width: 100%; /* Full width */
+    padding: 8px; /* Padding for input fields */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .filtering {
+        flex-direction: column; /* Stack elements on small screens */
+    }
+    
+    .filtering .form-group {
+        width: 100%; /* Full width on small screens */
+    }
+}
+
+
+.d-flex.align-items-center .mr-3 {
+    margin-right: 15px;
+}
+
+
+form {
+    width: 100%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 50px;
+}
+
+#createTableForm,#shareForm {
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+
+form label {
+    display: block;
+    margin: 10px 10px 5px;
+}
+
+form select, form input {
+    width: calc(100% - 20px);
+    padding: 5px;
+    margin: 10px 10px 0; /* Reduced top margin from 20px to 10px */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+
+}
+
+.shaded-cell{
+    font-size: 11px;
+}
+
+.shaded-cell:hover {
+    background-color: #f1efef75 !important;
+}
+
+.blankCells:hover {
+    background-color: #f1efef75 !important;
+}
+
+
+
+
+
+.time-selection {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px; 
+    width: 100%;
+}
+
+.time-selection label {
+    margin-bottom:10px ; /* Remove margin for labels */
+}
+
+.time-selection select {
+    width: 100%; /* Set a fixed width for consistency */
+    position: relative;
+}
+
+.btn {
+    display: flex;
+    justify-content: center; /* Align buttons to the center horizontally */
+    align-items: center; /* Align vertically (optional) */
+    margin-top: 10px; /* Optional: Add some space above the buttons */
+    gap: 10px; /* Add some space between buttons */
+    border: none;
+    width: 100%; /* Ensure the container takes full width */
+}
+
+#button {
+    display: flex;
+    justify-content: center; /* Align buttons to the center horizontally */
+    align-items: center; /* Align vertically (optional) */
+    margin-top: 10px; /* Optional: Add some space above the buttons */
+    gap: 10px; /* Add some space between buttons */
+    border: none;
+    width: 100%; /* Ensure the container takes full width */
+    color: white; 
+    border-radius: 15px; /* Rounded corners */
+}
+
+
+.btn input[type="submit"],
+.btn input[type="button"] {
+    padding: 10px 15px; /* Adjust button padding */
+    font-size: 16px; /* Font size for the buttons */
+    cursor: pointer; /* Pointer cursor for better UX */
+    border: none; /* Remove default borders */
+    border-radius: 15px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+
+#btnchange{
+    background-color: transparent; /* Red */ /* Red border */
+    border-radius: 20px;
+    color:#047304;
+    display: inline;
+    border: none;
+    width: 3;
+
+
+}
+
+#btnchange:hover {
+    /* background-color: #000000; Darker blue on hover */
+    color: #ef6d31;
+}
+
+#delete, #copy{
+    background-color: transparent; /* Red */ /* Red border */
+    border-radius: 20px;
+    color:#262726;
+    display: inline;
+    width: 3;
+}
+
+#delete{
+    color: red;
+}
+
+
+#copy{
+color: #2e47d4;
+}
+
+#delete:hover {
+    color: #ef6d31;
+}
+
+.custom-icon {
+    font-size: 30px; /* Change this value to your desired size */
+}
+
+
+/* Style the icon */
+.custom-icon {
+    font-size: 30px;
+    position: relative; /* Make the icon the reference point for the tooltip */
+}
+
+
+/* Specific styles for each button */
+#plotScheduleBtn {
+    border: solid #fb4700 1px;
+    color: #fb4700; /* Button text color */
+    background-color: transparent; /* Darker blue on hover */
+    
+
+}
+
+#updateScheduleBtn {
+    background-color: transparent; /* Yellow */
+    border: solid #ffc107 1px; /* Yellow border */
+    color: #ffc107; /* Black text for contrast */
+
+}
+
+#deleteScheduleBtn {
+    background-color: transparent; /* Red */
+    border: solid 1px #dc3545; /* Red border */
+    color:#dc3545;
+}
+
+#shareScheduleBtn {
+    background-color: transparent; /* Red */
+    border:solid 1px #010101; /* Red border */
+    color: #010101; /* Red border */
+}
+
+#UnShareScheduleBtn {
+    background-color: transparent; /* Red */
+    border:solid 1px #010101; /* Red border */
+    color: #010101;
+}
+
+#plotScheduleBtn:hover {
+    background-color: #fb4700; /* Darker blue on hover */
+    color:#fff;
+}
+
+#updateScheduleBtn:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+    color:#fff;
+
+}
+
+#deleteScheduleBtn:hover {
+    background-color: #c82333; /* Darker red on hover */
+    color:#fff;
+}
+
+#shareScheduleBtn:hover {
+    background-color: #010101; /* Red */
+    color: #ffff; /* Red border */
+}
+    
+.popup{
+    display:none;
+    position:fixed;
+    top:50%; 
+    left:50%; 
+    transform:translate(-50%, -50%); 
+    width:10%;
+    height:9%;
+    color:white; 
+    padding:20px; 
+    border-radius:10px; 
+    text-align:center;
+    z-index:1000;
+    box-shadow: 0 0 20px rgba(200, 191, 191, 0.8); 
+    opacity: 1; 
+    transition: opacity 0.5s ease;
+}
+
+#plotPopup{
+    background-color:rgba(245, 138, 71, 0.8); 
+}
+
+#updatePopup{
+    background-color:rgba(233, 214, 93, 0.8); 
+}
+
+#deletePopup{
+    background-color:rgba(233, 91, 91, 0.8); 
+}
+   
+   
+.btn-close {
+    color: #aaa;
+    float: right;
+    font-weight: bold;
+}
+
+.btn-close:hover,
+.btn-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;    
+}
+
+
+.table-container {
+    overflow-x: auto;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f9f9f9; 
+    height: 60%;
+    border-radius: 8px;
+}
+
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    
+}
+.schedule-table th, .schedule-table td, .schedule-table tr {
+    border: 1px solid #969696;
+    padding: 8px;
+    text-align: center;
+}
+
+
+.schedule-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.schedule-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.time-slot {
+    font-weight: bold;
+    height:auto;
+    font-size:10px;
+    white-space: nowrap;
+}
+
+.filter-btn {
+    border-radius: 4px;
+    border: none;
+    color: rgb(0, 0, 0); /* Change as needed */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: transparent; /* Ensure background is transparent */
+    float: right;
+}
+
+#color{
+    width:30px; 
+    height:30px; 
+    border:none; 
+    background-color:transparent;
+}
+
+.modal-content {
+    border-radius: 20px;
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.modal-title {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.modal-body {
+    padding: 10px 15px;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+
+#create {
+    align-self: center;
+    width: 50%;
+    border-radius: 30px;
+    background-color: #000000;  /* Add background color to ensure it's visible */
+    margin: 20px 20px;
+    z-index: 1000; /* Ensure it's above other elements */
+    color: white;
+   
+}
+
+#create:hover {
+    align-self: center;
+    width: 50%;
+    border-radius: 30px;
+    background-color: transparent;  /* Add background color to ensure it's visible */
+    margin: 20px 20px;
+    z-index: 1000; /* Ensure it's above other elements */
+    border:solid 1px #010101; 
+    color: #010101;
+}
+
+
+#btnNo{
+    background-color:#010101;
+    color:white; 
+}
+
+#btnNo:hover{
+    background-color:transparent;
+    color:#010101;
+    border:solid 1px #010101; /* Red border */
+}
+
+#btnYes{
+    background-color:#FD7238;
+    color:white; 
+}
+
+#btnYes:hover{
+    background-color:transparent;
+    color:#FD7238;
+    border:solid 1px #FD7238; /* Red border */
+}
+
+
+#dropdown {
+    width: 10%; /* Adjust the width of the entire dropdown */
+}
+
+#dropdown .dropdown-item:hover {
+    background-color: #e9ecef; /* Light grey background on item hover */
+    color: #FD7238; /* Match hover color of toggle link */
+}
+
+#dropdown .dropdown-item:active {
+    background-color: #ced4da; /* Slightly darker background when clicked */
+    color: #FD7238; /* Match clicked color of toggle link */
+}
+
+.title {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+    color: #FD7238;
+}
+
+
+.table-container::-webkit-scrollbar {
+    width: 8px; 
+}
+
+
+#header{
+    font-weight: bold;
+}
+
+#new_filter_icon:hover,#filter_icon:hover{
+color: black;
+}

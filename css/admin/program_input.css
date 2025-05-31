@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+    background-color: white;
+    font-family: 'Poppins';
+}
+
+/* navbar */
+nav {
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    height: 80px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.schedsys {
+    font-weight: bold;
+    font-size: 20px;
+    color: #28a745;
+    margin-left: 2px;
+    margin-top: 15px;
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    color: #28a745;
+    font-size: 25px;
+    gap: 15px;
+    margin-right: 50px;
+}
+
+.navbar-icons a {
+    color: #28a745;
+    margin-top: 3px;
+}
+
+.navbar .dropdown {
+    position: relative;
+}
+
+.navbar .dropdown .hamburger-menu {
+    cursor: pointer;
+}
+
+.navbar .dropdown .hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #28a745;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.program-input {
+    padding: 30px 20px;
+    height: 500px;
+    margin: 0 auto; 
+}
+
+.col-lg-4 {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    border: none;
+    padding: 25px 15px;
+}
+
+.col-lg-4 label {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+option {
+    font-size: 13px;
+}
+
+.col-lg-4 input {
+    font-size: 13px;
+}
+
+.col-lg-8 {
+    padding: 0 50px;
+}
+
+.table {
+    text-align: center;
+    background-color: none;
+}
+
+.table thead {
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table tbody {
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:none;
+}
+.btn-primary,
+.btn-warning,
+.btn-danger {
+    border: none;
+    border-radius: 20px;
+    padding: 5px 20px;
+    margin: 0px 5px;
+    color: white;
+}
+
+.fixed-height-table tbody {
+    display: block;
+    height: 500px; 
+    overflow-y: auto;
+    font-size: 15px;
+}
+
+.fixed-height-table thead, 
+.fixed-height-table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.pagination-wrapper {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.pagination .active .page-link {
+    background-color: green;
+    border-color: green;
+    color: white;
+}
+
+.fa-chevron-down {
+    right: 10px;
+    top: 50%; 
+    transform: translateY(-50%); 
+    pointer-events: none;
+}
+
+.dropdown-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#professorList {
+    display: none;
+}

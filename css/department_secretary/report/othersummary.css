@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container .nav-tabs .nav-link {
+    font-size: 14px;
+    color: #666; /* Default color for inactive tabs */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effects */
+}
+
+/* Hover effect */
+.container .nav-tabs .nav-link:hover {
+    color: black;
+}
+
+/* Active tab styling */
+.container .nav-tabs .nav-link.active {
+    background-color: #FD7238; /* Set background to orange for the active tab */
+    color: white; /* Set text color to white for the active tab */
+    border: 1px solid #FD7238; /* Optional: border matching the background */
+    border-radius: 4px; /* Rounded corners for the active tab */
+}
+
+.title {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+    color: #FD7238;
+}
+
+h5 {
+    font-weight: bold;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.text {
+    margin: 10px;
+    font-weight: bold;
+}
+
+.time-slot {
+    font-weight: bold;
+    background-color: #eeeeee !important;
+    font-size: 0.85em;
+    white-space: nowrap;
+    padding: 0.5rem;
+}
+
+.modal-dialog {
+    max-width: 80%;
+    margin: 1.5rem auto;
+}
+
+.modal-content {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-body {
+    padding: 1rem;
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+    padding: 0.75rem;
+}
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
+    flex-wrap: wrap; /* Adjusts for smaller screens */
+}
+
+.search-bar-container .col-md-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.search-bar-container .form-group input {
+    margin: 5px;
+    font-size: 14px;
+    width: 100%; /* Make input fields adapt */
+}
+
+.search-bar-container .btn {
+    background-color: #FD7238;
+    color: white;
+    font-size: 14px;
+}
+
+.search-bar-container .btn:hover {
+    background-color: #ffe8c5;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+}
+
+.text-center {
+    font-size: 13px;
+    border-top: none;
+    display: none;
+}
+
+.select-checkbox {
+    margin-right: 10px;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.edit-btn {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+}
+
+.report-btn {
+    display: none;
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+}
+
+.equal-width {
+    width: 33%;
+    text-align: center;
+}
+
+.checkbox-large {
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+}
+
+.check {
+    align-items: left;
+    text-align: left;
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    flex-wrap: wrap; /* Wrap buttons for small screens */
+}
+
+form {
+    flex-grow: 1;
+}
+
+.no-schedules-message {
+    text-align: center;
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.schedule-summary p {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px 0;
+    font-family: Arial, sans-serif;
+}
+
+.schedule-summary {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #333;
+}
+
+.schedule-summary strong {
+    color: #000;
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .container .nav-tabs .nav-link {
+        font-size: 12px; /* Reduce tab font size */
+    }
+
+    .title {
+        font-size: 18px; /* Adjust title size */
+    }
+
+    .modal-dialog {
+        max-width: 90%; /* Adjust modal width for tablets */
+    }
+
+    .search-bar-container .col-md-3 {
+        flex-direction: column; /* Stack the elements vertically */
+        justify-content: flex-start;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container .nav-tabs .nav-link {
+        font-size: 11px; /* Further reduce tab font size */
+    }
+
+    .title {
+        font-size: 16px; /* Smaller title for narrow screens */
+    }
+
+    .modal-dialog {
+        max-width: 95%; /* Full width for smaller screens */
+    }
+
+    .button-group {
+        justify-content: center; /* Center-align buttons */
+    }
+
+    .equal-width {
+        width: 100%; /* Full-width elements */
+        margin-bottom: 10px;
+    }
+    .search-bar-container .col-md-3 {
+        flex-direction: column; /* Stack the elements vertically */
+        justify-content: flex-start;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .title {
+        font-size: 14px; /* Further adjust title size */
+    }
+
+    .time-slot {
+        font-size: 0.75em; /* Smaller font for time slots */
+        padding: 0.25rem;
+    }
+
+    .schedule-summary p {
+        font-size: 10px; /* Reduce font size in summary */
+    }
+    .search-bar-container .col-md-3 {
+        flex-direction: column; /* Stack the elements vertically */
+        justify-content: flex-start;
+        margin: 10px;
+    }
+}
+
+
+@page {
+    size: A4;
+    margin: 1cm;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    page-break-inside: auto;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+}
+
+
+.schedule-table th, .schedule-table td {
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 11px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.schedule-table tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+}
+
+.schedule-table tr td, .schedule-table tr th {
+    page-break-inside: avoid;
+}
+
+/* Prevent breaking inside card-body */
+.card-body.schedule-content {
+    page-break-inside: avoid;
+}
+

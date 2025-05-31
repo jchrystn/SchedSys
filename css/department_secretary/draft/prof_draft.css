@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --color-primary: #6C9BCF;
+    --color-danger: #FF0060;
+    --color-success: #1B9C85;
+    --color-warning: #F7D060;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant: #677483;
+    --color-background: #e0e0e4;
+    --color-orange: #FD7238;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    ;
+}
+
+.dark-mode-variables {
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+    background-color: var(--color-background);
+}
+
+
+.container .nav-tabs .nav-link {
+    font-size: 14px;
+    color: #666; /* Default color for inactive tabs */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effects */
+}
+
+/* Hover effect */
+.container .nav-tabs .nav-link:hover {
+    color: black;
+}
+
+/* Active tab styling */
+.container .nav-tabs .nav-link.active {
+    background-color: #FD7238; /* Set background to orange for the active tab */
+    color: white; /* Set text color to white for the active tab */
+    border: 1px solid #FD7238;; /* Optional: border matching the background */
+    border-radius: 4px; /* Rounded corners for the active tab */
+}
+
+
+.title {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+    color: #FD7238;
+}
+
+.table-container {
+    max-height: 300px; 
+    overflow-y: auto;
+}
+
+.table-container::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px; 
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.table {
+    text-align: center;
+}
+
+.icons {
+    display: flex;
+    justify-content: center; /* Centers the buttons horizontally */
+    align-items: center; /* Centers the buttons vertically */
+    gap: 20px;
+}
+
+.icons button {
+    margin: 0 25px; /* Adds horizontal space between buttons */
+    padding: 8px 16px; /* Optional: Control button size */
+}
+
+
+.table-container th, .table td {
+    vertical-align: middle;
+}
+
+
+/* Optional: Set a different background color for th elements inside the thead */
+.table-container thead th {
+    border-top: 1px solid #a5a5a542;
+    background-color: none; 
+    color: black; 
+}
+
+
+.table tr {
+    font-size: 15px;
+    cursor: pointer;
+ 
+}
+
+.table tbody tr:hover td {
+    background-color: #FD7238;
+    color: #ffffff;
+
+}
+
+
+.equal-width {
+    width: 50%;
+    text-align: center;
+}
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    padding: 20px 8px;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.search-bar-container .form-group {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar-container .form-group input {
+    margin-right: 15px;
+    font-size: 14px;
+    padding: 7px 0;
+}
+.search-bar-container .btn {
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    border: none;
+    margin-left: 10px;
+}
+
+td .delete-btn {
+    color: #ffffff;
+    position: absolute; 
+    right: 35%; 
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+}
+
+.delete-btn:hover {
+    transform: translateY(-50%);
+    border: none;
+    font-size: 20px;
+}
+
+td:hover .delete-btn,
+td:hover .edit-btn {
+    display: block;
+}
+
+td {
+    position: relative; 
+    padding: 10px; 
+}
+
+td .edit-btn {
+    color: #ffffff;
+    position: absolute; 
+    right: 70%; 
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+}
+
+.edit-btn:hover {
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    font-size: 20px;
+}
+
+.fa-light.fa-pencil:hover{
+    color: #ffffff;/* Change this to your desired color */
+}
+
+.fa-light.fa-trash:hover {
+    color: #ffffff;/* Change this to your desired color */
+}
+#create {
+    align-self: center;
+    border-radius: 30px;
+    margin: 10px 20px;
+    z-index: 1000; /* Ensure it's above other elements */
+    transition: background-color 0.3s ease;
+    color:#FD7238;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.view-btn {
+    display: none;
+}
+
